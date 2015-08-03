@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>RailsDependency</ID>
+  <OriginalElement>#skill_keeper</OriginalElement>
+  <nodes>
+    <node x="0.0" y="825.0">User</node>
+    <node x="595.0" y="295.5">SkillGroupToSkillRelationship</node>
+    <node x="578.5" y="526.75">PersonToSkillGroupRelationship</node>
+    <node x="44.5" y="400.0">Skill</node>
+    <node x="24.0" y="0.0">ReportTemplate</node>
+    <node x="0.0" y="190.0">SkillGroup</node>
+    <node x="53.0" y="610.0">Person</node>
+    <node x="534.0" y="69.25000000000006">ReportTemplateToSkillGroupRelationship</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="SkillGroup" target="SkillGroupToSkillRelationship">
+      <point x="227.0" y="42.5" />
+      <point x="534.0" y="337.75" />
+      <point x="-105.5" y="-42.25" />
+    </edge>
+    <edge source="ReportTemplate" target="ReportTemplateToSkillGroupRelationship">
+      <point x="203.0" y="-0.0" />
+      <point x="454.0" y="75.0" />
+      <point x="-166.5" y="-42.25" />
+    </edge>
+    <edge source="Skill" target="PersonToSkillGroupRelationship">
+      <point x="182.5" y="42.5" />
+      <point x="454.0" y="527.5" />
+      <point x="534.0" y="569.0" />
+      <point x="-122.0" y="-42.25" />
+    </edge>
+    <edge source="Person" target="PersonToSkillGroupRelationship">
+      <point x="174.0" y="-0.0" />
+      <point x="454.0" y="695.0" />
+      <point x="534.0" y="653.5" />
+      <point x="-122.0" y="42.25" />
+    </edge>
+    <edge source="Skill" target="SkillGroupToSkillRelationship">
+      <point x="182.5" y="-42.5" />
+      <point x="454.0" y="442.5" />
+      <point x="534.0" y="422.25" />
+      <point x="-105.5" y="42.25" />
+    </edge>
+    <edge source="SkillGroup" target="ReportTemplateToSkillGroupRelationship">
+      <point x="227.0" y="-42.5" />
+      <point x="-166.5" y="42.25" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.8500967117988395" x="433.5733788395904" y="387.0" />
+  <SelectedNodes>
+    <node>User</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Association fields</Category>
+    <Category>Migration fields</Category>
+    <Category>System DB fields</Category>
+  </Categories>
+</Diagram>
+
