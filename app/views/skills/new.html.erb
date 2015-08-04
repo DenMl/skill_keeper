@@ -1,0 +1,13 @@
+<% provide(:title, 'Add Skill') %>
+<h1>Add Skill</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@skill) do |f| %>
+
+        <%= render 'fields', f: f %>
+        <%= f.submit "Create skill", class: "btn btn-large btn-primary" %>
+        <%= link_to "Cancel", :back, class: "btn btn-large btn-secondary" %>
+    <% end %>
+  </div>
+</div>

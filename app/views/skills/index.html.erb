@@ -1,0 +1,18 @@
+<% provide(:title, 'All skills') %>
+<h1>Skills</h1>
+
+  <%= will_paginate %>
+
+    <table class="table" id="skills">
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+      <%= render @skills %>
+    </table>
+
+    <%= will_paginate %>
+
+<%= link_to "Create new", new_skill_path,
+            class: "btn btn-large btn-primary" %>
+

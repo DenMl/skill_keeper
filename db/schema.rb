@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20150731150002) do
 
   add_index "people", ["first_name", "last_name", "patronymic"], name: "index_people_on_first_name_and_last_name_and_patronymic", unique: true
 
-  create_table "person_to_skill_group_relationships", force: true do |t|
+  create_table "person_to_skill_relationships", force: true do |t|
     t.integer  "person_id"
     t.integer  "skill_id"
     t.datetime "created_at"
