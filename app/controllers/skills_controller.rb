@@ -1,12 +1,9 @@
 class SkillsController < ApplicationController
   before_action :signed_in_user
   respond_to :html, :js
+
   def index
     fetch
-  end
-
-  def fetch
-    @skills = Skill.all
   end
 
   def new
@@ -44,6 +41,10 @@ class SkillsController < ApplicationController
 
   def skill_params
     params.require(:skill).permit(:name, :description)
+  end
+
+  def fetch
+    @skills = Skill.paginate(page: params[:page], per_page: 15)
   end
 
 end
