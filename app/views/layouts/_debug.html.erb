@@ -1,0 +1,7 @@
+<%if Rails.env.development? %>
+<div class="col-md-12 debug">
+  <p class="text-left">
+  <%=debug(params)%>
+  </p>
+</div>
+<%end%>

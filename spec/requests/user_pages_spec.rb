@@ -22,8 +22,8 @@ describe "User pages" do
       it { should have_selector('div.pagination') }
 
       it "should list each user" do
-        User.paginate(page: 1).each do |user|
-          expect(page).to have_selector('li', text: user.name)
+        User.paginate(page: 1, per_page: 15).each do |user|
+          expect(page).to have_selector('tbody tr td.user_name', text: user.name)
         end
       end
     end
@@ -39,13 +39,13 @@ describe "User pages" do
           visit users_path
         end
 
-        it { should have_link('delete', href: user_path(User.first)) }
+        it { should have_link('Delete', href: user_path(User.first)) }
         it "should be able to delete another user" do
           expect do
-            click_link('delete', match: :first)
+            click_link('Delete', match: :first)
           end.to change(User, :count).by(-1)
         end
-        it { should_not have_link('delete', href: user_path(admin)) }
+        it { should_not have_link('Delete', href: user_path(admin)) }
       end
     end
 
@@ -86,7 +86,7 @@ describe "User pages" do
         fill_in "Name",         with: "Example User"
         fill_in "Email",        with: "user@example.com"
         fill_in "Password",     with: "foobar"
-        fill_in "Confirm Password", with: "foobar"
+        fill_in "Password confirmation", with: "foobar"
       end
 
       it "should create a user" do
@@ -112,7 +112,7 @@ describe "User pages" do
     end
 
     describe "page" do
-      it { should have_content("Update your profile") }
+      it { should have_content("Edit user") }
       it { should have_title("Edit user") }
       it { should have_link('change', href: 'http://gravatar.com/emails') }
     end
@@ -136,7 +136,7 @@ describe "User pages" do
         fill_in "Name",             with: new_name
         fill_in "Email",            with: new_email
         fill_in "Password",         with: user.password
-        fill_in "Confirm Password", with: user.password
+        fill_in "Password confirmation", with: user.password
         click_button "Save changes"
       end
 

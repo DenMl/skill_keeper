@@ -2,19 +2,25 @@ class SkillsController < ApplicationController
   before_action :signed_in_user
 
   def index
+    fetch
+  end
+
+  def fetch
     @skills = Skill.paginate(page: params[:page], per_page: 15 )
+    @page = params[:page]
   end
 
   def new
     @skill = Skill.new
+    @page = params[:page]
+    flash = nil
   end
 
   def create
     @skill = Skill.new(skill_params)
     if @skill.save
       flash[:success] = "Skill added."
-      index
-      redirect_to skills_url
+      fetch
     else
       render 'new'
     end

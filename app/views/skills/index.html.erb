@@ -1,18 +1,29 @@
 <% provide(:title, 'All skills') %>
-<h1>Skills</h1>
+<div class="container">
+  <h3>
+    <%= yield(:title) %>
+  </h3>
 
   <%= will_paginate %>
+  <table class="table table-hover" id="skills">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>&nbsp;</th>
+    </tr>
+    </thead>
+    <tbody class="skill-index">
 
-    <table class="table" id="skills">
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-      <%= render @skills %>
-    </table>
+    <% @skills.each do |skill| %>
+        <%= render 'skills/skill', skill: skill%>
+    <% end %>
 
-    <%= will_paginate %>
+    </tbody>
+  </table>
+  <%= will_paginate %>
+  <%= link_to "Create new", new_skill_path( page: @page), remote: true, class: "btn btn-primary" %>
+</div>
 
-<%= link_to "Create new", new_skill_path,
-            class: "btn btn-large btn-primary" %>
-
+<div class="modal fade" id="skill-modal" role="dialog" aria-labelledby="" aria-hidden="true">
+</div>
