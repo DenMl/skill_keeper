@@ -1,49 +1,43 @@
 class SkillsController < ApplicationController
   before_action :signed_in_user
-
+  respond_to :html, :js
   def index
     fetch
   end
 
   def fetch
-    @skills = Skill.paginate(page: params[:page], per_page: 15 )
-    @page = params[:page]
+    @skills = Skill.all
   end
 
   def new
     @skill = Skill.new
-    @page = params[:page]
-    flash = nil
+    @title = "New skill"
   end
 
   def create
-    @skill = Skill.new(skill_params)
-    if @skill.save
-      flash[:success] = "Skill added."
-      fetch
-    else
-      render 'new'
-    end
+    fetch
+    @skill = Skill.create(skill_params)
   end
 
   def edit
     @skill = Skill.find(params[:id])
+    @title = "Editing #{@skill.name}"
   end
 
   def update
+    fetch
     @skill = Skill.find(params[:id])
-    if @skill.update_attributes(skill_params)
-      flash[:success] = "Skill updated"
-      redirect_to skills_url
-    else
-      render 'edit'
-    end
+    @skill.update_attributes(skill_params)
+  end
+
+  def delete
+    @skill = Skill.find(params[:skill_id])
   end
 
   def destroy
-    Skill.find(params[:id]).destroy
-    flash[:success] = "Skill deleted."
-    redirect_to skills_url
+    fetch
+    @skill = Skill.find(params[:id]).destroy
+    @skill.destroy
   end
 
   private
