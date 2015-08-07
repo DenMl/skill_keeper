@@ -1,7 +1,7 @@
 $("ul.errors").html("")
 <% if @skill.errors.any? %>
 	<% @skill.errors.full_messages.each do |message| %>
-		$("ul.errors").append($("<li />").html("<%= message.html_safe %>"))
+		$("ul.errors").append($("<li />").addClass("list-group-item list-group-item-danger").html("<%= message.html_safe %>"))
 	<% end %>
 <% else %>
 	$(".skill-index").html("<%= j (render 'skills/index' ) %>")

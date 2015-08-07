@@ -14,6 +14,9 @@ class SkillsController < ApplicationController
   def create
     fetch
     @skill = Skill.create(skill_params)
+    if @skill.save
+      flash[:success] = "Skill #{@skill.name} created"
+    end
   end
 
   def edit
@@ -24,7 +27,9 @@ class SkillsController < ApplicationController
   def update
     fetch
     @skill = Skill.find(params[:id])
-    @skill.update_attributes(skill_params)
+    if @skill.update_attributes(skill_params)
+      flash[:success] = "Skill #{@skill.name} updated"
+    end
   end
 
   def delete
@@ -35,6 +40,7 @@ class SkillsController < ApplicationController
     fetch
     @skill = Skill.find(params[:id]).destroy
     @skill.destroy
+    flash[:success] = "Skill #{@skill.name} deleted."
   end
 
   private

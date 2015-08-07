@@ -1,5 +1,8 @@
 <% provide(:title, 'All skills') %>
 <div class="container">
+  <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+  <% end %>
   <h3>
     <%= yield(:title) %>
   </h3>
