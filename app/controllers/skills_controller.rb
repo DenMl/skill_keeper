@@ -20,8 +20,8 @@ class SkillsController < ApplicationController
   end
 
   def edit
-    @skill = Skill.find(params[:id])
-    @title = "Editing #{@skill.name}"
+      @skill = Skill.find(params[:id])
+      @title = "Editing #{@skill.name}"
   end
 
   def update
