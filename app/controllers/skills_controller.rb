@@ -15,7 +15,7 @@ class SkillsController < ApplicationController
     fetch
     @skill = Skill.create(skill_params)
     if @skill.save
-      flash[:success] = "Skill #{@skill.name} created"
+      flash[:success] = "Skill #{@skill.name} created."
     end
   end
 
@@ -28,7 +28,7 @@ class SkillsController < ApplicationController
     fetch
     @skill = Skill.find(params[:id])
     if @skill.update_attributes(skill_params)
-      flash[:success] = "Skill #{@skill.name} updated"
+      flash[:success] = "Skill #{@skill.name} updated."
     end
   end
 
