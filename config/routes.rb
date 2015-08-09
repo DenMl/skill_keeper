@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
   match '/help',    to: 'static_pages#help',    via: 'get'
+
+  match '/change_locale/:locale', to: 'settings#change_locale', via: 'get', as: :change_locale
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 

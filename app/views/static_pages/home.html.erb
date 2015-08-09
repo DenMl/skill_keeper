@@ -11,15 +11,15 @@
 
       <div class="jumbotron">
         <h2>
-          Welcome to the Skill Keeper
+          <%= t 'welcome' %>
         </h2>
 
         <p>
-          This is ......
+          <%= t 'greeting' %>
         </p>
 
         <p>
-          <%= link_to "Sign up now!", signup_path,
+          <%= link_to t('sign_up'), signup_path,
                       class: "btn btn-large btn-primary" %>
         </p>
 
