@@ -1,9 +1,27 @@
 ru:
-  title: Скилл Менеджер
+  title: Скил Менеджер
   welcome: Добро пожаловать в Менеджер Скиллов
   greeting: Идеальное решение для руководителей всех уровней. ;-)
   sign_up: Быстрее к нам...
-  all_skills: Список скиллов
+  sign_in: Войти
+  sign_out: Выйти
+  signin_request: Пожалуйста, войдите в систему.
+  users: Пользователи
+  about: О нас
+  contact: Контакты
+  account: Аккаунт
+  skills: Скилы
+  signin_page:
+    signin: Вход
+    email: Адрес электронной почты
+    password: Пароль
+    new_user: У нас впервые?
+  static_pages:
+    home: На главную
+    help: Помощь
+    profile: Профиль 
+    settings: Настройки
+  all_skills: Список скилов
   menu:
     languages:
       language: Язык

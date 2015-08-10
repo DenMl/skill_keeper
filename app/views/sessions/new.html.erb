@@ -1,4 +1,4 @@
-<% provide(:title, "Sign in") %>
+<% provide(:title, t('signin_page.signin')) %>
 <div class="row">
   <div class="col-md-4">
   </div>
@@ -8,16 +8,17 @@
     </h3>
     <%= form_for(:session, url: sessions_path) do |f| %>
         <div class="form-group">
-          <%= f.label :email, class: 'control-label' %>
+          <%= f.label t('signin_page.email'), class: 'control-label' %>
           <%= f.text_field :email, class: 'form-control' %>
         </div>
         <div class="form-group">
-          <%= f.label :password, class: 'control-label' %>
+          <%= f.label t('signin_page.password'), class: 'control-label' %>
           <%= f.password_field :password, class: 'form-control' %>
         </div>
-        <%= f.submit "Sign in", class: "btn btn-primary btn-block" %>
+        <%= f.submit t('sign_in'), class: "btn btn-primary btn-block" %>
     <% end %>
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+    <br/>
+    <p><%= t('signin_page.new_user')%> <%= link_to t('sign_up'), signup_path %></p>
   </div>
 </div>
 <div class="col-md-4">

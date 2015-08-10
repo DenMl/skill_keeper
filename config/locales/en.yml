@@ -24,6 +24,24 @@ en:
   welcome: Welcome to Skill Keeper
   greeting: Perfect solution for every manager. Enjoy ;-)
   sing_up: Go...
+  sign_in: Sign in
+  sign_out: Sign out
+  signin_request: Please, sign in.
+  users: Users
+  about: About
+  contact: Contacts
+  account: Account
+  skills: Skills
+  signin_page:
+    signin: Sign in
+    email: Email
+    password: Password
+    new_user: New user?
+  static_pages:
+    home: Home
+    help: Help
+    profile: Profile 
+    settings: Settings
   all_skills: Skills list
   menu:
     languages:
