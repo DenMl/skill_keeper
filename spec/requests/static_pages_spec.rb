@@ -24,7 +24,6 @@ describe "Static pages" do
       end
 
     end
-
   end
 
   describe "Help page" do

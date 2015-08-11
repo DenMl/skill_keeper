@@ -48,7 +48,6 @@ describe "User pages" do
         it { should_not have_link('Delete', href: user_path(admin)) }
       end
     end
-
   end
 
   describe "profile page" do
@@ -58,7 +57,6 @@ describe "User pages" do
 
     it { should have_content(user.name) }
     it { should have_title(user.name) }
-
   end
 
   describe "signup page" do

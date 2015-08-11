@@ -43,7 +43,6 @@ describe "Authentication" do
     end
   end
 
-
   describe "authorization" do
 
     describe "for non-signed-in users" do
@@ -80,8 +79,6 @@ describe "Authentication" do
       end
 
     end
-
-
   end
 
 end
