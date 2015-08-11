@@ -1,12 +1,11 @@
 require 'spec_helper'
 
-describe "Skills page" do
+describe "skills" do
 
 	subject { page }
 	
-	describe "skill list" do
+	describe "skills#index" do
 		let(:user) { FactoryGirl.create(:user) }
-		let(:skills) { 10.times { FactoryGirl.create(:skill) } }
 		before(:each) do
 			sign_in user
 			visit skills_path
@@ -14,5 +13,13 @@ describe "Skills page" do
 
 		it { should have_title('All skills') }
     	it { should have_content('All skills') }
+
+    	describe "display all skills" do
+    		before(:all) { FactoryGirl.create(:skill) }
+      		after(:all)  { Skill.delete_all }
+
+      		it { should have_selector('table tbody tr:nth-of-type(1) td:nth-of-type(1)', text: 'Skill 1')}
+      		it { should have_selector('table tbody tr:nth-of-type(1) td:nth-of-type(2)', text: 'Skill 1 short description.')}
+    	end
 	end
 end
