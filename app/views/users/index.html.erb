@@ -1,4 +1,4 @@
-<% provide(:title, 'All users') %>
+<% provide(:title, t('user_page.title')) %>
 <div class="container">
   <h3>
     <%= yield(:title) %>
@@ -10,8 +10,8 @@
     <thead>
     <tr>
       <th>&nbsp;</th>
-      <th>Name</th>
-      <th>Email</th>
+      <th><%= t('user_page.name_column')%></th>
+      <th><%= t('user_page.email_column')%></th>
       <th>&nbsp;</th>
     </tr>
     </thead>
@@ -24,7 +24,7 @@
           <td><%= user.email %></td>
           <td>
             <% if current_user.admin? && !current_user?(user) %>
-              <%= link_to "Delete", user, method: :delete, data: { confirm: "You sure?" }, class: "btn btn-warning btn-xs" %>
+              <%= link_to t('user_page.delete_button'), user, method: :delete, data: { confirm: t('user_page.delete_confirmation') }, class: "btn btn-warning btn-xs" %>
             <% end %>
           </td>
         </tr>

@@ -23,7 +23,9 @@ en:
   title: Skill Keeper
   welcome: Welcome to Skill Keeper
   greeting: Perfect solution for every manager. Enjoy ;-)
-  sing_up: Go...
+  registration_title: Registration
+  registration_button: Register
+  sign_up_button: Go...
   sign_in: Sign in
   sign_out: Sign out
   signin_request: Please, sign in.
@@ -32,6 +34,12 @@ en:
   contact: Contacts
   account: Account
   skills: Skills
+  user_page:
+    delete_button: Delete
+    title: All Users
+    name_column: Name
+    email_column: Email
+    delete_confirmation: Are you sure?
   signin_page:
     signin: Sign in
     email: Email
@@ -42,7 +50,32 @@ en:
     help: Help
     profile: Profile 
     settings: Settings
-  all_skills: Skills list
+  profile_page:
+    title: Edit profile
+    save_changes_button: Save changes
+    change_gravatar_link: change
+    name_field: Name
+    email_field: Email
+    password_field: Password
+    password_confirmation_field: Password confirmation
+  skill:
+    title: All skills
+    create_button: Create
+    edit_button: Edit
+    delete_button: Delete
+    close_button: Close
+    all_skills: Skill list
+    new_skill_title: New skill
+    edit_skill_title: Editing %{skill}
+    delete_modal_title: Deleting skill
+    create_success: Skill %{skill} successfully created
+    update_success: Skill %{skill} successfully edited
+    delete_success: Skill %{skill} successfully deleted
+    name_field: Name
+    description_field: Description
+    description_placeholder: Short description
+    accept_changes_button: Accept
+    delete_confirmation: Are you sure you want to delete  
   menu:
     languages:
       language: Language

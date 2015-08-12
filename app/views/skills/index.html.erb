@@ -1,4 +1,4 @@
-<% provide(:title, 'All skills') %>
+<% provide(:title, t('skill.title')) %>
 <div class="container">
   <h3>
     <%= yield(:title) %>
@@ -16,7 +16,7 @@
       <%= render "skills/index" %>
     </tbody>
   </table>
-  <%= link_to "Create new", new_skill_path, remote: true, class: "btn btn-primary" %>
+  <%= link_to t('skill.create_button'), new_skill_path, remote: true, class: "btn btn-primary" %>
 </div>
 
 <div class="modal fade" id="skill-modal" role="dialog" aria-labelledby="" aria-hidden="true">

@@ -8,27 +8,27 @@ class SkillsController < ApplicationController
 
   def new
     @skill = Skill.new
-    @title = "New skill"
+    @title = t('skill.new_skill_title')
   end
 
   def create
     fetch
     @skill = Skill.create(skill_params)
     if @skill.save
-      flash[:success] = "Skill #{@skill.name} created."
+      flash[:success] = t('skill.create_success', skill: @skill.name)
     end
   end
 
   def edit
       @skill = Skill.find(params[:id])
-      @title = "Editing #{@skill.name}"
+      @title = t('skill.edit_skill_title', skill: @skill.name)
   end
 
   def update
     fetch
     @skill = Skill.find(params[:id])
     if @skill.update_attributes(skill_params)
-      flash[:success] = "Skill #{@skill.name} updated."
+      flash[:success] = t('skill.update_success', skill: @skill.name)
     end
   end
 
@@ -40,7 +40,7 @@ class SkillsController < ApplicationController
     fetch
     @skill = Skill.find(params[:id]).destroy
     @skill.destroy
-    flash[:success] = "Skill #{@skill.name} deleted."
+    flash[:success] = t('skill.delete_success', skill: @skill.name)
   end
 
   private
