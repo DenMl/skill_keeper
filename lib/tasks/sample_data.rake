@@ -3,11 +3,11 @@ namespace :db do
   task populate: :environment do
     make_users
     make_skills
-    make_persons
+    make_candidates
     make_skill_groups
     make_report_templates
     make_skill_group_to_skill_relationship
-    make_person_to_skill_relationship
+    make_candidate_to_skill_relationship
     make_report_template_to_skill_group_relationship
   end
 end
@@ -35,9 +35,9 @@ def make_skills
   end
 end
 
-def make_persons
+def make_candidates
     20.times do
-     Person.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, patronymic: Faker::Name.first_name )
+     Candidate.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, patronymic: Faker::Name.first_name )
     end
 end
 
@@ -64,12 +64,12 @@ def make_skill_group_to_skill_relationship
   end
 end
 
-def make_person_to_skill_relationship
+def make_candidate_to_skill_relationship
 
-  Person.all.each do |person|
+  Candidate.all.each do |candidate|
     ids = Skill.all.ids.to_a.shuffle[0..15]
     ids.each do |id|
-      PersonToSkillRelationship.create!(skill_id: id, person_id: person.id )
+      CandidateToSkillRelationship.create!(skill_id: id, candidate_id: candidate.id )
     end
   end
 end

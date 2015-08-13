@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20150731150002) do
 
-  create_table "people", force: true do |t|
+  create_table "candidates", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "patronymic"
@@ -21,10 +21,10 @@ ActiveRecord::Schema.define(version: 20150731150002) do
     t.datetime "updated_at"
   end
 
-  add_index "people", ["first_name", "last_name", "patronymic"], name: "index_people_on_first_name_and_last_name_and_patronymic", unique: true
+  add_index "candidates", ["first_name", "last_name", "patronymic"], name: "index_candidate_on_first_name_and_last_name_and_patronymic", unique: true
 
-  create_table "person_to_skill_relationships", force: true do |t|
-    t.integer  "person_id"
+  create_table "candidate_to_skill_relationships", force: true do |t|
+    t.integer  "candidate_id"
     t.integer  "skill_id"
     t.datetime "created_at"
     t.datetime "updated_at"
