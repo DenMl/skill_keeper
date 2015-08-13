@@ -1,0 +1,2 @@
+class SkillGroupsController < ApplicationController
+end
