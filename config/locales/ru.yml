@@ -57,6 +57,26 @@ ru:
     description_field: Описание
     description_placeholder: Краткое описание
     accept_changes_button: Принять
+    delete_confirmation: Вы действительно хотите удалить
+  skill_group:
+    title: Все группы
+    create_button: Создать
+    edit_button: Редактировать
+    delete_button: Удалить
+    close_button: Закрыть
+    skill_list_button: Список скилов
+    all_skills: Список групп
+    new_title: Новая группа
+    edit_title: Редактирование %{skill_group}
+    delete_modal_title: Удаление группы
+    skill_list_title: Список скилов
+    create_success: Группа %{skill_group} успешно создана
+    update_success: Группа %{skill_group} успешно отредактирована
+    delete_success: Группа %{skill_group} успешно удалена
+    name_field: Название
+    description_field: Описание
+    description_placeholder: Краткое описание
+    accept_changes_button: Принять
     delete_confirmation: Вы действительно хотите удалить 
   menu:
     languages:

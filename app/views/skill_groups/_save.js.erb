@@ -1,0 +1,10 @@
+$("ul.errors").html("")
+<% if @skill_group.errors.any? %>
+	<% @skill_group.errors.full_messages.each do |message| %>
+		$("ul.errors").append($("<li />").addClass("list-group-item list-group-item-danger").html("<%= message.html_safe %>"))
+	<% end %>
+<% else %>
+	$(".skill_group-index").html("<%= j (render 'skill_groups/index' ) %>")
+	location.reload(true)
+	$("#skill_group-modal").modal("hide")
+<% end %>

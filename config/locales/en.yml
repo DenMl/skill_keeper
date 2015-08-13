@@ -76,6 +76,26 @@ en:
     description_placeholder: Short description
     accept_changes_button: Accept
     delete_confirmation: Are you sure you want to delete  
+  skill_group:
+    title: All skill groups
+    create_button: Create
+    edit_button: Edit
+    delete_button: Delete
+    close_button: Close
+    skill_list_button: Skill list
+    all_skills: Skill group list
+    new_title: New skill group
+    edit_title: Editing %{skill_group}
+    skill_list_title: Skill list
+    delete_modal_title: Deleting skill group
+    create_success: Skill group %{skill_group} successfully created
+    update_success: Skill group %{skill_group} successfully edited
+    delete_success: Skill group %{skill_group} successfully deleted
+    name_field: Name
+    description_field: Description
+    description_placeholder: Short description
+    accept_changes_button: Accept
+    delete_confirmation: Are you sure you want to delete
   menu:
     languages:
       language: Language

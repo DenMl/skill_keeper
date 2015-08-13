@@ -1,0 +1,33 @@
+<%= form_for @skill_group, remote: true, html: {class: "form-horizontal", style: "display:inline;"} do |f| %>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">
+            <%= @title %>
+          </h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12">
+              <ul class="errors list-group"></ul>
+              <div>
+                <%= f.label t('skill_group.name_field'), class: 'control-label' %>
+                <%= f.text_field :name, class: 'form-control' %>
+              </div>
+              <div>
+                <%= f.label t('skill_group.description_field'), class: 'control-label' %>
+                <%= f.text_area :description, class: 'form-control', rows: 3, placeholder: t('skill_group.description_placeholder') %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            <%= t('skill_group.close_button')%>
+          </button>
+          <%= f.submit t('skill_group.accept_changes_button'), class: "btn btn-primary" %>
+        </div>
+      </div>
+
+    </div>
+<% end %>
