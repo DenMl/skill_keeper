@@ -1,0 +1,24 @@
+<% provide(:title, t('skill_group.title')) %>
+<div class="container">
+  <h3>
+    <%= yield(:title) %>
+  </h3>
+  <%= will_paginate @skill_groups %>
+  <table class="table table-hover" id="skill_groups">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+    </tr>
+    </thead>
+    <tbody class="skill_group-index">
+      <%= render "skill_groups/index" %>
+    </tbody>
+  </table>
+  <%= link_to t('skill_group.create_button'), new_skill_group_path, remote: true, class: "btn btn-primary" %>
+</div>
+
+<div class="modal fade" id="skill_group-modal" role="dialog" aria-labelledby="" aria-hidden="true">
+</div>
