@@ -13,7 +13,7 @@
     <div class="col-md-12">
       <%= render 'layouts/navbar' %>
       <% flash.each do |key, value| %>
-          <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+        <%= content_tag(:div, value, class: "alert alert-#{key}") %>
       <% end %>
       <%= yield %>
     </div>

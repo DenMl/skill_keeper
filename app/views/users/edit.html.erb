@@ -1,4 +1,4 @@
-<% provide(:title, "Edit user") %>
+<% provide(:title, t('profile_page.title')) %>
 <div class="row">
   <div class="col-md-4">
   </div>
@@ -8,11 +8,11 @@
     </h3>
     <%= form_for(@user) do |f| %>
         <%= render 'fields', f: f %>
-        <%= f.submit "Save changes", class: "btn btn-primary btn-block" %>
+        <%= f.submit t('profile_page.save_changes_button'), class: "btn btn-primary btn-block" %>
     <% end %>
-
+    <br/>
     <%= gravatar_for @user %>
-    <a href="http://gravatar.com/emails">change</a>
+    <a href="http://gravatar.com/emails"><%= t('profile_page.change_gravatar_link')%></a>
   </div>
 </div>
 <div class="col-md-4">

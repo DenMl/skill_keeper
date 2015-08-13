@@ -1,0 +1,15 @@
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h3><%= t('skill.delete_modal_title')%></h3>
+		</div>
+		<div class="modal-body">
+			<ul class="errors"></ul>
+			<%= t('skill.delete_confirmation') %> <b><%= @skill.name %></b>?
+		</div>
+		<div class="modal-footer">
+			<%= link_to t('skill.accept_changes_button'), skill_path(@skill), method: :delete, remote: true, class: "btn btn-danger" %>
+			<%= link_to t('skill.close_button'), "#", class: "btn", data: {dismiss: "modal"} %>
+		</div>
+	</div>
+</div>	

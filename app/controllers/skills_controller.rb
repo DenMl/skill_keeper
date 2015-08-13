@@ -1,55 +1,56 @@
 class SkillsController < ApplicationController
   before_action :signed_in_user
+  respond_to :html, :js
 
   def index
     fetch
   end
 
-  def fetch
-    @skills = Skill.paginate(page: params[:page], per_page: 15 )
-    @page = params[:page]
-  end
-
   def new
     @skill = Skill.new
-    @page = params[:page]
-    flash = nil
+    @title = t('skill.new_skill_title')
   end
 
   def create
-    @skill = Skill.new(skill_params)
+    fetch
+    @skill = Skill.create(skill_params)
     if @skill.save
-      flash[:success] = "Skill added."
-      fetch
-    else
-      render 'new'
+      flash[:success] = t('skill.create_success', skill: @skill.name)
     end
   end
 
   def edit
-    @skill = Skill.find(params[:id])
+      @skill = Skill.find(params[:id])
+      @title = t('skill.edit_skill_title', skill: @skill.name)
   end
 
   def update
+    fetch
     @skill = Skill.find(params[:id])
     if @skill.update_attributes(skill_params)
-      flash[:success] = "Skill updated"
-      redirect_to skills_url
-    else
-      render 'edit'
+      flash[:success] = t('skill.update_success', skill: @skill.name)
     end
   end
 
+  def delete
+    @skill = Skill.find(params[:skill_id])
+  end
+
   def destroy
-    Skill.find(params[:id]).destroy
-    flash[:success] = "Skill deleted."
-    redirect_to skills_url
+    fetch
+    @skill = Skill.find(params[:id]).destroy
+    @skill.destroy
+    flash[:success] = t('skill.delete_success', skill: @skill.name)
   end
 
   private
 
   def skill_params
     params.require(:skill).permit(:name, :description)
+  end
+
+  def fetch
+    @skills = Skill.paginate(page: params[:page], per_page: 15)
   end
 
 end

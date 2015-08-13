@@ -1,4 +1,4 @@
-<% provide(:title, "Sign up") %>
+<% provide(:title, t('registration_title')) %>
 <div class="row">
   <div class="col-md-4">
   </div>
@@ -8,7 +8,7 @@
     </h3>
     <%= form_for(@user) do |f| %>
         <%= render 'fields', f: f %>
-        <%= f.submit "Create my account", class: "btn btn-primary btn-block" %>
+        <%= f.submit t('registration_button'), class: "btn btn-primary btn-block" %>
     <% end %>
 
   </div>

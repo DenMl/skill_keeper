@@ -18,7 +18,7 @@ def make_users
                        password: "123456",
                        password_confirmation: "123456",
                        admin: true)
-  99.times do |n|
+  10.times do |n|
     name  = Faker::Name.name
     email = "example-#{n+1}@railstutorial.org"
     password  = "password"
@@ -30,13 +30,13 @@ def make_users
 end
 
 def make_skills
-  60.times do |i|
+  40.times do |i|
     Skill.create!(name: "Skill #{i}", description: Faker::Lorem.sentence(5) )
   end
 end
 
 def make_persons
-    50.times do
+    20.times do
      Person.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, patronymic: Faker::Name.first_name )
     end
 end

@@ -11,8 +11,8 @@ describe "User pages" do
       visit users_path
     end
 
-    it { should have_title('All users') }
-    it { should have_content('All users') }
+    it { should have_title('All Users') }
+    it { should have_content('All Users') }
 
     describe "pagination" do
 
@@ -48,7 +48,6 @@ describe "User pages" do
         it { should_not have_link('Delete', href: user_path(admin)) }
       end
     end
-
   end
 
   describe "profile page" do
@@ -58,14 +57,13 @@ describe "User pages" do
 
     it { should have_content(user.name) }
     it { should have_title(user.name) }
-
   end
 
   describe "signup page" do
 
     before { visit signup_path }
 
-    let(:submit) { "Create my account" }
+    let(:submit) { "Register" }
 
     describe "with invalid information" do
       it "should not create a user" do
@@ -75,7 +73,7 @@ describe "User pages" do
       describe "after submission" do
         before { click_button submit }
 
-        it { should have_title('Sign up') }
+        it { should have_title('Registration') }
         it { should have_content('error') }
       end
 
@@ -83,10 +81,10 @@ describe "User pages" do
 
     describe "with valid information" do
       before do
-        fill_in "Name",         with: "Example User"
-        fill_in "Email",        with: "user@example.com"
-        fill_in "Password",     with: "foobar"
-        fill_in "Password confirmation", with: "foobar"
+        fill_in "user_name",         with: "Example User"
+        fill_in "user_email",        with: "user@example.com"
+        fill_in "user_password",     with: "foobar"
+        fill_in "user_password_confirmation", with: "foobar"
       end
 
       it "should create a user" do
@@ -112,8 +110,8 @@ describe "User pages" do
     end
 
     describe "page" do
-      it { should have_content("Edit user") }
-      it { should have_title("Edit user") }
+      it { should have_content("Edit profile") }
+      it { should have_title("Edit profile") }
       it { should have_link('change', href: 'http://gravatar.com/emails') }
     end
 
@@ -133,10 +131,10 @@ describe "User pages" do
       let(:new_name)  { "New Name" }
       let(:new_email) { "new@example.com" }
       before do
-        fill_in "Name",             with: new_name
-        fill_in "Email",            with: new_email
-        fill_in "Password",         with: user.password
-        fill_in "Password confirmation", with: user.password
+        fill_in "user_name",             with: new_name
+        fill_in "user_email",            with: new_email
+        fill_in "user_password",         with: user.password
+        fill_in "user_password_confirmation", with: user.password
         click_button "Save changes"
       end
 

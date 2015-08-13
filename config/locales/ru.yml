@@ -1,0 +1,65 @@
+ru:
+  will_paginate:
+    previous_label: Предыдущая
+    next_label: Следующая
+  title: Скил Менеджер
+  welcome: Добро пожаловать в Менеджер Скиллов
+  greeting: Идеальное решение для руководителей всех уровней. ;-)
+  registration_title: Регистрация
+  registration_button: Зарегистрироваться
+  sign_up_button: Быстрее к нам...
+  sign_in: Войти
+  sign_out: Выйти
+  signin_request: Пожалуйста, войдите в систему.
+  users: Пользователи
+  about: О нас
+  contact: Контакты
+  account: Аккаунт
+  skills: Скилы
+  user_page:
+    delete_button: Удалить
+    title: Все пользователи
+    name_column: Имя
+    email_column: Адрес электронной почты
+    delete_confirmation: Вы уверены?
+  signin_page:
+    signin: Вход
+    email: Адрес электронной почты
+    password: Пароль
+    new_user: У нас впервые?
+  static_pages:
+    home: На главную
+    help: Помощь
+    profile: Профиль 
+    settings: Настройки
+  profile_page:
+    title: Редактирование профиля
+    save_changes_button: Сохранить изменения
+    change_gravatar_link: изменить
+    name_field: Имя
+    email_field: Адрес электронной почты
+    password_field: Пароль
+    password_confirmation_field: Подтверждение пароля
+  skill:
+    title: Все скилы
+    create_button: Создать
+    edit_button: Редактировать
+    delete_button: Удалить
+    close_button: Закрыть
+    all_skills: Список скилов
+    new_skill_title: Новый скил
+    edit_skill_title: Редактирование %{skill}
+    delete_modal_title: Удаление скила
+    create_success: Скил %{skill} успешно создан
+    update_success: Скил %{skill} успешно отредактирован
+    delete_success: Скил %{skill} успешно удален
+    name_field: Название
+    description_field: Описание
+    description_placeholder: Краткое описание
+    accept_changes_button: Принять
+    delete_confirmation: Вы действительно хотите удалить 
+  menu:
+    languages:
+      language: Язык
+      ru: Русский
+      en: Английский	
