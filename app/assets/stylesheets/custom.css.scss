@@ -5,3 +5,34 @@ body { padding-top: 70px; }
 .pagination {
   display: block;
 }
+
+/* autocomplete */
+ul.ui-autocomplete { 
+	position: absolute; 
+	cursor: default; 
+	background: #CCE;
+	z-index: 2006;
+	list-style:none;
+	padding: 2px;
+	margin-top: -3px;
+    margin: 0;
+    display:block;
+    float: left;
+}   
+
+li.ui-menu-item {
+    margin:0;
+    padding: 0;
+    zoom: 1;
+    float: left;
+    clear: left;
+    width: 100%;
+    }
+
+li.ui-state-focus {
+	background: #CC0;	
+	text-decoration:none;
+    display:block;
+    padding:.2em .4em;
+    line-height:1.5;
+}

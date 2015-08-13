@@ -8,9 +8,20 @@
 			<p><%= @skill_group.name %></p>
 			<ul>
 				<% @skills.each do |skill| %>
-					<li><%= skill.name %></li>
+					<%= render "skill_groups/skill_list_item", skill: skill %>
 				<% end %>
 			</ul>
+			<legend></legend>
+			<%= form_for @skill_group, url: "#", remote: true  do |f| %>
+				<div class="row">
+					<div class="col-md-4">
+						<%= autocomplete_field_tag :skill, '' ,  autocomplete_skill_name_skill_groups_path, placeholder: "Skill" %>
+					</div>
+					<div class="col-md-2">
+						<%= f.submit 'Add skill', class: "btn btn-xs btn-default" %>
+					</div>
+				</div>
+			<% end %>
 		</div>
 		<div class="modal-footer">
 			<%= link_to t('skill_group.close_button'), "#", class: "btn btn-default", data: {dismiss: "modal"} %>
