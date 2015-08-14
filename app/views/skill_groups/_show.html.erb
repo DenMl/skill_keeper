@@ -4,21 +4,29 @@
 			<h3><%= t('skill_group.skill_list_title')%></h3>
 		</div>
 		<div class="modal-body">
-			<ul class="errors"></ul>
-			<p><%= @skill_group.name %></p>
-			<ul>
-				<% @skills.each do |skill| %>
-					<%= render "skill_groups/skill_list_item", skill: skill %>
-				<% end %>
-			</ul>
+			<ul class="errors list-group"></ul>
+			<h3><span class="label label-info"><%= @skill_group.name %></span></h3>
+			<div class="well">
+				<table class="table table-hover">
+					<thead>
+						<tr><b>Skill</b></tr>
+						<tr>&nbsp;</tr>
+					</thead>
+					<tbody>
+						<% @skills.each do |skill| %>
+							<%= render "skill_groups/skill_list_item", skill: skill %>
+						<% end %>
+					</tbody>
+				</table>
+			</div>
 			<legend></legend>
-			<%= form_for @skill_group, url: "#", remote: true  do |f| %>
+			<%= form_for @skill_group, url: add_skill_path(id: @skill_group.id), remote: true  do |f| %>
 				<div class="row">
 					<div class="col-md-4">
 						<%= autocomplete_field_tag :skill, '' ,  autocomplete_skill_name_skill_groups_path, placeholder: "Skill" %>
 					</div>
 					<div class="col-md-2">
-						<%= f.submit 'Add skill', class: "btn btn-xs btn-default" %>
+						<%= f.submit 'Add skill', class: "btn btn-xs btn-warning" %>
 					</div>
 				</div>
 			<% end %>
