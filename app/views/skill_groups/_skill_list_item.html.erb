@@ -1,12 +1,12 @@
 <tr>
 	<td>
-		<div class="col-md-5">
+		<div class="col-md-6">
 			<%= skill.name %>
 		</div>
 	</td>
 	<td>
-		<div class="col-sm-3">
-		<%= link_to "remove", remove_skill_path(skill_group_id: @skill_group.id, id: skill.id), method: :post, remote: true, class: "btn btn-xs btn-danger"%>
+		<div class="col-md-2">
+		<%= link_to t('skill_group.remove_skill_button'), remove_skill_path(skill_group_id: @skill_group.id, id: skill.id), method: :post, remote: true, class: "btn btn-xs btn-danger"%>
 		</div>
 	</td>
 </tr>

@@ -59,6 +59,7 @@ en:
     password_field: Password
     password_confirmation_field: Password confirmation
   skill:
+    skill: Skill
     title: All skills
     create_button: Create
     edit_button: Edit
@@ -96,6 +97,8 @@ en:
     description_placeholder: Short description
     accept_changes_button: Accept
     delete_confirmation: Are you sure you want to delete
+    add_skill_button: Add skill
+    remove_skill_button: Remove
   menu:
     languages:
       language: Language

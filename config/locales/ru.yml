@@ -41,6 +41,7 @@ ru:
     password_field: Пароль
     password_confirmation_field: Подтверждение пароля
   skill:
+    skill: Скил
     title: Все скилы
     create_button: Создать
     edit_button: Редактировать
@@ -78,6 +79,8 @@ ru:
     description_placeholder: Краткое описание
     accept_changes_button: Принять
     delete_confirmation: Вы действительно хотите удалить 
+    add_skill_button: Добавить скил
+    remove_skill_button: Удалить
   menu:
     languages:
       language: Язык

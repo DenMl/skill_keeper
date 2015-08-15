@@ -10,10 +10,10 @@ class SkillActionsController < ApplicationController
 			if relation.nil?
 				SkillGroupToSkillRelationship.create(skill_group_id: params[:id], skill_id: skill.id)
 			else
-				@skill_group.errors.add(:base, "Skill already added to group.")
+				@skill_group.errors.add(:base, t('skill_group.skill_already_added_msg'))
 			end
 		else
-			@skill_group.errors.add(:base, "Skill not specified.")
+			@skill_group.errors.add(:base, t('skill_group.skill_not_specified_msg'))
 		end
 		@skills = get_skills
 	end
