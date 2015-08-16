@@ -1,4 +1,5 @@
 class SkillActionsController < ApplicationController
+	before_action :signed_in_user
 	respond_to :html, :js
 
 	def add_skill
