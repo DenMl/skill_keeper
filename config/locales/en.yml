@@ -100,6 +100,10 @@ en:
     delete_confirmation: Are you sure you want to delete
     add_skill_button: Add skill
     remove_skill_button: Remove
+    skill_list_tooltip: Click to see skill list...
+    skill_already_added_msg: Skill already added to the group
+    skill_not_specified_msg: Skill name not specified
+    wrong_skill_name_specified_msg: Skill not exist
   menu:
     languages:
       language: Language

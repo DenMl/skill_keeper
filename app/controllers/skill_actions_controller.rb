@@ -7,11 +7,15 @@ class SkillActionsController < ApplicationController
 		@skill_group = SkillGroup.find(params[:id])
 		if !params[:skill].empty?
 			skill = Skill.find_by name: params[:skill]
-			relation = SkillGroupToSkillRelationship.find_by skill_group_id: params[:id], skill_id: skill.id
-			if relation.nil?
-				SkillGroupToSkillRelationship.create(skill_group_id: params[:id], skill_id: skill.id)
+			if !skill.nil? 
+				relation = SkillGroupToSkillRelationship.find_by skill_group_id: params[:id], skill_id: skill.id
+				if relation.nil?
+					SkillGroupToSkillRelationship.create(skill_group_id: params[:id], skill_id: skill.id)
+				else
+					@skill_group.errors.add(:base, t('skill_group.skill_already_added_msg'))
+				end
 			else
-				@skill_group.errors.add(:base, t('skill_group.skill_already_added_msg'))
+				@skill_group.errors.add(:base, t('skill_group.wrong_skill_name_specified_msg'))
 			end
 		else
 			@skill_group.errors.add(:base, t('skill_group.skill_not_specified_msg'))

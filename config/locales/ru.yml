@@ -82,6 +82,10 @@ ru:
     delete_confirmation: Вы действительно хотите удалить 
     add_skill_button: Добавить скил
     remove_skill_button: Удалить
+    skill_list_tooltip: Нажмите для просмотра скилов...
+    skill_already_added_msg: Скил уже добавлен в группу
+    skill_not_specified_msg: Имя скила не указано
+    wrong_skill_name_specified_msg: Скила с таким именем не существует
   menu:
     languages:
       language: Язык

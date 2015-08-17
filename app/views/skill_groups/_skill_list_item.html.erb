@@ -1,11 +1,12 @@
 <tr>
 	<td>
 		<div class="col-md-6">
-			<%= skill.name %>
+				<%= skill.name %> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="<%= skill.description %>"></span>
 		</div>
+		</span>
 	</td>
 	<td>
-		<div class="col-md-2">
+		<div class="col-md-3">
 		<%= link_to t('skill_group.remove_skill_button'), remove_skill_path(skill_group_id: @skill_group.id, id: skill.id), method: :post, remote: true, class: "btn btn-xs btn-danger"%>
 		</div>
 	</td>
