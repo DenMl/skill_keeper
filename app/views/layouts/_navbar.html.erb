@@ -9,6 +9,7 @@
         <li><%= link_to t('static_pages.home'), root_path %></li>
         <% if signed_in? %>
             <li><%= link_to t('skills'), skills_path %></li>
+            <li><%= link_to t('candidates.page'), candidates_path %></li>
         <% end %>
         <li><%= link_to t('users'), users_path %></li>
       </ul>

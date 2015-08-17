@@ -58,6 +58,29 @@ en:
     email_field: Email
     password_field: Password
     password_confirmation_field: Password confirmation
+  candidates:
+    page: Candidates
+    title:
+      all: All candidates
+      new: New candidate
+      edit: Editing candidate %{first_name} %{last_name}
+      delete: Deleting candidate
+    confirmation:
+      delete: Are you sure you want to delete
+    button:
+      create: Create
+      delete: Delete
+      edit: Edit
+      close: Close
+      accept_changes: Accept
+    field:
+      first_name: First Name
+      last_name: Last Name
+      patronymic: Patronymic
+    success:
+      create: Candidate %{first_name} %{last_name} successfully created
+      update: Candidate %{first_name} %{last_name} successfully edited
+      delete: Candidate %{first_name} %{last_name} successfully deleted
   skill:
     title: All skills
     create_button: Create

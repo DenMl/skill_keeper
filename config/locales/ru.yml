@@ -40,6 +40,29 @@ ru:
     email_field: Адрес электронной почты
     password_field: Пароль
     password_confirmation_field: Подтверждение пароля
+  candidates:
+    page: Кандидаты
+    title:
+      all: Все кандидаты
+      new: Новый кандидат
+      edit: Редактирование кандидата %{first_name} %{last_name}
+      delete: Удаление кандидата
+    button:
+      create: Создать
+      delete: Удалить
+      edit: Редактировать
+      close: Закрыть
+      accept_changes: Принять
+    field:
+      first_name: Имя
+      last_name: Фамилия
+      patronymic: Отчество
+    confirmation:
+      delete: Вы действительно хотите удалить
+    success:
+      create: Кандидат %{first_name} %{last_name} успешно создан
+      update: Кандидат %{first_name} %{last_name} успешно отредактирован
+      delete: Кандидат %{first_name} %{last_name} успешно удален
   skill:
     title: Все скилы
     create_button: Создать

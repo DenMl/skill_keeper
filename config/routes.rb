@@ -10,9 +10,10 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
 
   #resources :skills, only: [:index, :new, :create, :edit, :update, :destroy]
+  #resources :candidates, only: [:index, :new, :create, :edit, :update, :destroy]
 
   resources :skills, :candidates do
-    get "delete"
+    get 'delete'
     get :autocomplete_skill_name, on: :collection
     get :autocomplete_skill_group_name, on: :collection
   end

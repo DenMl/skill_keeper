@@ -1,0 +1,11 @@
+<tr>
+  <td><%= candidate.first_name %></td>
+  <td><%= candidate.last_name %></td>
+  <td><%= candidate.patronymic %></td>
+  <td>
+    <div class="btn-group btn-group-xs">
+      <%= link_to t('candidates.button.edit'), edit_candidate_path(candidate), remote: true, class: 'btn btn-xs btn-default' %>
+      <%= link_to t('candidates.button.delete'), candidate_delete_path(candidate), remote: true, class: 'btn btn-warning btn-xs' %>
+    </div>
+  </td>
+</tr>
