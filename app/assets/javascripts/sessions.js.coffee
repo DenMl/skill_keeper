@@ -4,6 +4,7 @@
 
 ready = ->
 	$(".alert").hide("fade", 2000)
+	$(".has-tooltip").tooltip()
 
 $(document).ready(ready)
 $(document).on('page:load', ready)

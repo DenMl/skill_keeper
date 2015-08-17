@@ -34,6 +34,7 @@ en:
   contact: Contacts
   account: Account
   skills: Skills
+  skill_groups: Skills Groups
   user_page:
     delete_button: Delete
     title: All Users

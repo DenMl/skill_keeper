@@ -16,6 +16,7 @@ ru:
   contact: Контакты
   account: Аккаунт
   skills: Скилы
+  skill_groups: Группы скилов
   user_page:
     delete_button: Удалить
     title: Все пользователи

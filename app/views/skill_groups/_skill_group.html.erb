@@ -1,11 +1,10 @@
 <tr>
-  <td><%= skill_group.name %></td>
-  <td><%= skill_group.description %></td>
   <td>
-    <div class="btn-group btn-group-xs">
-      <%= link_to t('skill_group.skill_list_button'), skill_group_path(skill_group), remote: true, class: "btn btn-primary btn-xs" %>
-    </div>
+  	<span class="has-tooltip" data-toggle="tooltip" title="Click to see skill list...">
+  		<%= link_to skill_group.name, skill_group_path(skill_group), remote: true %>
+  	</span>
   </td>
+  <td><%= skill_group.description %></td>
   <td>
     <div class="btn-group btn-group-xs">
       <%= link_to t('skill_group.edit_button'), edit_skill_group_path(skill_group), remote: true, class: "btn btn-xs btn-default" %>
