@@ -61,31 +61,37 @@ ru:
     accept_changes_button: Принять
     delete_confirmation: Вы действительно хотите удалить
   skill_group:
-    title: Все группы
-    create_button: Создать
-    edit_button: Редактировать
-    delete_button: Удалить
-    close_button: Закрыть
-    skill_list_button: Список скилов
-    all_skills: Список групп
-    new_title: Новая группа
-    edit_title: Редактирование %{skill_group}
-    delete_modal_title: Удаление группы
-    skill_list_title: Список скилов
-    create_success: Группа %{skill_group} успешно создана
-    update_success: Группа %{skill_group} успешно отредактирована
-    delete_success: Группа %{skill_group} успешно удалена
-    name_field: Название
-    description_field: Описание
-    description_placeholder: Краткое описание
-    accept_changes_button: Принять
-    delete_confirmation: Вы действительно хотите удалить 
-    add_skill_button: Добавить скил
-    remove_skill_button: Удалить
-    skill_list_tooltip: Нажмите для просмотра скилов...
-    skill_already_added_msg: Скил уже добавлен в группу
-    skill_not_specified_msg: Имя скила не указано
-    wrong_skill_name_specified_msg: Скила с таким именем не существует
+    page: Список групп
+    title: 
+      all: Все группы
+      new: Новая группа
+      edit: Редактирование %{skill_group}
+      skill_list: Список скилов
+      delete_modal: Удаление группы
+    button:
+      create: Создать
+      edit: Редактировать
+      delete: Удалить
+      close: Закрыть
+      skill_list: Список скилов
+      add_skill: Добавить скил
+      remove_skill: Удалить
+      accept_changes: Принять
+    msg:
+      create_success: Группа %{skill_group} успешно создана.
+      update_success: Группа %{skill_group} успешно отредактирована.
+      delete_success: Группа %{skill_group} успешно удалена.
+      skill_already_added: Скил уже добавлен в группу.
+      skill_not_specified: Имя скила не указано.
+      wrong_skill_name_specified: Скила с таким именем не существует.
+      delete_confirmation: Вы действительно хотите удалить 
+    field:
+      name: Название
+      description: Описание
+    placeholder:
+      description: Краткое описание
+    tooltip:
+      skill_list: Нажмите для просмотра скилов... 
   menu:
     languages:
       language: Язык

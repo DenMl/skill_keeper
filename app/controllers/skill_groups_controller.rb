@@ -10,14 +10,14 @@ class SkillGroupsController < ApplicationController
 
   def new
     @skill_group = SkillGroup.new
-    @title = t('skill_group.new_title')
+    @title = t('skill_group.title.new')
   end
 
   def create
     fetch
     @skill_group = SkillGroup.create(skill_group_params)
     if @skill_group.save
-      flash[:success] = t('skill_group.create_success', skill_group: @skill_group.name)
+      flash[:success] = t('skill_group.msg.create_success', skill_group: @skill_group.name)
     end
   end
 
@@ -28,14 +28,14 @@ class SkillGroupsController < ApplicationController
 
   def edit
       @skill_group = SkillGroup.find(params[:id])
-      @title = t('skill_group.edit_title', skill_group: @skill_group.name)
+      @title = t('skill_group.title.edit', skill_group: @skill_group.name)
   end
 
   def update
     fetch
     @skill_group = SkillGroup.find(params[:id])
     if @skill_group.update_attributes(skill_group_params)
-      flash[:success] = t('skill_group.update_success', skill_group: @skill_group.name)
+      flash[:success] = t('skill_group.msg.update_success', skill_group: @skill_group.name)
     end
   end
 
@@ -47,7 +47,7 @@ class SkillGroupsController < ApplicationController
     fetch
     @skill_group = SkillGroup.find(params[:id]).destroy
     @skill_group.destroy
-    flash[:success] = t('skill_group.delete_success', skill_group: @skill_group.name)
+    flash[:success] = t('skill_group.msg.delete_success', skill_group: @skill_group.name)
   end
 
   private
