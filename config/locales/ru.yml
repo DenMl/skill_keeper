@@ -53,6 +53,10 @@ ru:
       edit: Редактировать
       close: Закрыть
       accept_changes: Принять
+    table_column:
+      first_name: Имя
+      last_name: Фамилия
+      patronymic: Отчество
     field:
       first_name: Имя
       last_name: Фамилия

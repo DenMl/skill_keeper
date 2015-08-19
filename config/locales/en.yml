@@ -77,6 +77,10 @@ en:
       first_name: First Name
       last_name: Last Name
       patronymic: Patronymic
+    table_column:
+      first_name: First Name
+      last_name: Last Name
+      patronymic: Patronymic
     success:
       create: Candidate %{first_name} %{last_name} successfully created
       update: Candidate %{first_name} %{last_name} successfully edited
