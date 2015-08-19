@@ -15,4 +15,10 @@ FactoryGirl.define do
   	sequence(:description) {|n| "Skill #{n} short description."}
   end
 
+  factory :candidate do
+    sequence(:first_name) { |n| "First Name #{n}" }
+    sequence(:last_name) {|n| "Last Name #{n}"}
+    sequence(:patronymic) {|n| "Patronymic #{n}"}
+  end
+
 end
