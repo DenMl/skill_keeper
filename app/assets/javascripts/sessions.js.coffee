@@ -5,7 +5,7 @@
 ready = ->
 	$('.alert').hide('fade', 2000)
 	$('[data-toggle="tooltip"]').tooltip()
-	$(".modal").tooltip({ selector: '[data-toggle=tooltip]' });
+	$(".modal").tooltip({ selector: '[data-toggle=tooltip]' })
 
 $(document).ready(ready)
 $(document).on('page:load', ready)

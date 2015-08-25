@@ -8,6 +8,9 @@ body { padding-top: 70px; }
 }
 
 /* autocomplete */
+.ui-helper-hidden-accessible{
+        display:none;
+}
 ul.ui-autocomplete { 
 	position: absolute; 
 	cursor: default; 
