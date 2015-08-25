@@ -30,15 +30,8 @@ class SkillActionsController < ApplicationController
 		if !skill_name.empty? 
 			skill = Skill.find_by name: skill_name
 			if !skill.nil?
-				if (item.instance_of? SkillGroup) 
-					puts "Adding skill to skill group"
-					relation = SkillGroupToSkillRelationship.find_by skill_group_id: item.id, skill_id: skill.id
-					if relation.nil? 
-						SkillGroupToSkillRelationship.create(skill_group_id: item.id, skill_id: skill.id)
-					else
-						item.errors.add(:base, t('skill_group.skill_already_added_msg'))
-					end
-				end
+					puts "Adding skill to item..."
+					create_skill_to_item_relation item, skill.id
 			else
 				item.errors.add(:base, t('skill_group.wrong_skill_name_specified_msg'))
 			end
@@ -49,6 +42,25 @@ class SkillActionsController < ApplicationController
 
   	def remove_skill(item, skill_id)
   		puts "Remove skill processing..."
+  		delete_skill_to_item_relation item, skill_id
+  	end
+
+  	def create_skill_to_item_relation(item, skill_id)
+  		case item
+  		when SkillGroup
+	  		relation = SkillGroupToSkillRelationship.find_by skill_group_id: item.id, skill_id: skill_id
+			if relation.nil? 
+				SkillGroupToSkillRelationship.create(skill_group_id: item.id, skill_id: skill_id)
+			else
+				item.errors.add(:base, t('skill_group.skill_already_added_msg'))
+			end
+		else
+			item.errors.add(:base, t('general_error_msg'))
+		end
+		item
+  	end
+
+  	def delete_skill_to_item_relation(item, skill_id)
   		case item
   		when SkillGroup
   			puts "Removing skill from skill group..."
