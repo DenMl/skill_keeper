@@ -1,7 +1,7 @@
 <div class="modal-dialog">
 	<div class="modal-content">
 		<div class="modal-header">
-			<h3><%= t('skill_group.skill_list_title')%></h3>
+			<h3><%= t('skill_group.title.skill_list')%></h3>
 		</div>
 		<div class="modal-body">
 			<ul class="errors list-group"></ul>
@@ -14,7 +14,7 @@
 					</thead>
 					<tbody>
 						<% @skills.each do |skill| %>
-							<%= render "skill_groups/skill_list_item", skill: skill %>
+							<%= render 'skill_groups/skill_list_item', skill: skill %>
 						<% end %>
 					</tbody>
 				</table>
@@ -26,13 +26,13 @@
 						<%= autocomplete_field_tag :skill, '' ,  autocomplete_skill_name_skill_groups_path, placeholder: t('skill.skill') %>
 					</div>
 					<div class="col-md-2">
-						<%= f.submit t('skill_group.add_skill_button'), class: "btn btn-xs btn-warning" %>
+						<%= f.submit t('skill_group.button.add_skill'), class: "btn btn-xs btn-warning" %>
 					</div>
 				</div>
 			<% end %>
 		</div>
 		<div class="modal-footer">
-			<%= link_to t('skill_group.close_button'), "#", class: "btn btn-default", data: {dismiss: "modal"} %>
+			<%= link_to t('skill_group.button.close'), "#", class: "btn btn-default", data: {dismiss: "modal"} %>
 		</div>
 	</div>
 </div>	

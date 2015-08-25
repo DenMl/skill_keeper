@@ -1,14 +1,14 @@
-<% provide(:title, t('skill_group.title')) %>
+<% provide(:title, t('skill_group.page')) %>
 <div class="container">
   <h3>
-    <%= yield(:title) %>
+    <%= t('skill_group.title.all') %>
   </h3>
   <%= will_paginate @skill_groups %>
   <table class="table table-hover" id="skill_groups">
     <thead>
     <tr>
-      <th><%= t('skill_group.name_field')%></th>
-      <th><%= t('skill_group.description_field')%></th>
+      <th><%= t('skill_group.field.name')%></th>
+      <th><%= t('skill_group.field.description')%></th>
       <th>&nbsp;</th>
     </tr>
     </thead>
@@ -16,7 +16,7 @@
       <%= render "skill_groups/index" %>
     </tbody>
   </table>
-  <%= link_to t('skill_group.create_button'), new_skill_group_path, remote: true, class: "btn btn-primary" %>
+  <%= link_to t('skill_group.button.create'), new_skill_group_path, remote: true, class: "btn btn-primary" %>
 </div>
 
 <div class="modal fade" id="skill_group-modal" role="dialog" aria-labelledby="" aria-hidden="true">

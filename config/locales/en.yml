@@ -34,8 +34,11 @@ en:
   contact: Contacts
   account: Account
   skills: Skills
+<<<<<<< HEAD
   skill_groups: Skills Groups
   general_error_msg: An error occured during processing request...
+=======
+>>>>>>> ca133de665e0b4f477ed875226f499ccbefb8970
   user_page:
     delete_button: Delete
     title: All Users
@@ -80,31 +83,37 @@ en:
     accept_changes_button: Accept
     delete_confirmation: Are you sure you want to delete  
   skill_group:
-    title: All skill groups
-    create_button: Create
-    edit_button: Edit
-    delete_button: Delete
-    close_button: Close
-    skill_list_button: Skill list
-    all_skills: Skill group list
-    new_title: New skill group
-    edit_title: Editing %{skill_group}
-    skill_list_title: Skill list
-    delete_modal_title: Deleting skill group
-    create_success: Skill group %{skill_group} successfully created
-    update_success: Skill group %{skill_group} successfully edited
-    delete_success: Skill group %{skill_group} successfully deleted
-    name_field: Name
-    description_field: Description
-    description_placeholder: Short description
-    accept_changes_button: Accept
-    delete_confirmation: Are you sure you want to delete
-    add_skill_button: Add skill
-    remove_skill_button: Remove
-    skill_list_tooltip: Click to see skill list...
-    skill_already_added_msg: Skill already added to the group
-    skill_not_specified_msg: Skill name not specified
-    wrong_skill_name_specified_msg: Skill not exist
+    page: Skills Groups
+    title: 
+      all: All skill groups
+      new: New skill group
+      edit: Editing %{skill_group}
+      skill_list: Skill list
+      delete_modal: Deleting skill group
+    button:
+      create: Create
+      edit: Edit
+      delete: Delete
+      close: Close
+      skill_list: Skill list
+      add_skill: Add skill
+      remove_skill: Remove
+      accept_changes: Accept
+    msg:
+      create_success: Skill group %{skill_group} successfully created.
+      update_success: Skill group %{skill_group} successfully edited.
+      delete_success: Skill group %{skill_group} successfully deleted.
+      skill_already_added: Skill already added to the group.
+      skill_not_specified: Skill name not specified.
+      wrong_skill_name_specified: Skill not exist.
+      delete_confirmation: Are you sure you want to delete
+    field:
+      name: Name
+      description: Description
+    placeholder:
+      description: Short description
+    tooltip:
+      skill_list: Click to see skill list... 
   menu:
     languages:
       language: Language
