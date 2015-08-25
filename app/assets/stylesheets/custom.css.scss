@@ -40,6 +40,13 @@ li.ui-state-focus {
 
 
 /* tooltip styling */
+#tooltip-sign{
+    display: none;
+}
+tr:hover #tooltip-sign{
+    display: inline-block;
+}
+
 .tooltip{
     position:absolute;
     z-index:2000;
