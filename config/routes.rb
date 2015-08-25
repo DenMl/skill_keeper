@@ -19,8 +19,8 @@ Rails.application.routes.draw do
 
   #add/remove skill 
 
-  match '/add_skill/:id', to: 'skill_actions#add_skill', via: 'patch', as: :add_skill
-  match '/remove_skill/:id', to: 'skill_actions#remove_skill', via: 'post', as: :remove_skill
+  match '/add_skill/:id', to: 'skill_actions#add_skill_to_group', via: 'patch', as: :add_skill
+  match '/remove_skill/:id', to: 'skill_actions#remove_skill_from_group', via: 'post', as: :remove_skill
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

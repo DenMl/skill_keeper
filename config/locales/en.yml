@@ -35,6 +35,7 @@ en:
   account: Account
   skills: Skills
   skill_groups: Skills Groups
+  general_error_msg: An error occured during processing request...
   user_page:
     delete_button: Delete
     title: All Users
