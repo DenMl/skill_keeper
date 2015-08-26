@@ -33,10 +33,10 @@ class SkillActionsController < ApplicationController
 					puts "Adding skill to item..."
 					create_skill_to_item_relation item, skill.id
 			else
-				item.errors.add(:base, t('skill_group.wrong_skill_name_specified_msg'))
+				item.errors.add(:base, t('skill_group.msg.wrong_skill_name_specified'))
 			end
 		else
-			item.errors.add(:base, t('skill_group.skill_not_specified_msg'))
+			item.errors.add(:base, t('skill_group.msg.skill_not_specified'))
 		end
   	end
 
@@ -52,7 +52,7 @@ class SkillActionsController < ApplicationController
 			if relation.nil? 
 				SkillGroupToSkillRelationship.create(skill_group_id: item.id, skill_id: skill_id)
 			else
-				item.errors.add(:base, t('skill_group.skill_already_added_msg'))
+				item.errors.add(:base, t('skill_group.msg.skill_already_added'))
 			end
 		else
 			item.errors.add(:base, t('general_error_msg'))
