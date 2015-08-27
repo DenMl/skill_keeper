@@ -21,4 +21,9 @@ FactoryGirl.define do
     sequence(:patronymic) {|n| "Patronymic #{n}"}
   end
 
+  factory :skill_group do
+    sequence(:name) { |n| "Skill group #{n}" }
+    sequence(:description) {|n| "Skill group #{n} short description."}
+  end
+
 end

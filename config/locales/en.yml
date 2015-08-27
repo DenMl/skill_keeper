@@ -34,6 +34,7 @@ en:
   contact: Contacts
   account: Account
   skills: Skills
+  general_error_msg: An error occured during processing request...
   user_page:
     delete_button: Delete
     title: All Users
@@ -86,6 +87,7 @@ en:
       update: Candidate %{first_name} %{last_name} successfully edited
       delete: Candidate %{first_name} %{last_name} successfully deleted
   skill:
+    skill: Skill
     title: All skills
     create_button: Create
     edit_button: Edit
@@ -103,6 +105,38 @@ en:
     description_placeholder: Short description
     accept_changes_button: Accept
     delete_confirmation: Are you sure you want to delete  
+  skill_group:
+    page: Skills Groups
+    title: 
+      all: All skill groups
+      new: New skill group
+      edit: Editing %{skill_group}
+      skill_list: Skill list
+      delete_modal: Deleting skill group
+    button:
+      create: Create
+      edit: Edit
+      delete: Delete
+      close: Close
+      skill_list: Skill list
+      add_skill: Add skill
+      remove_skill: Remove
+      accept_changes: Accept
+    msg:
+      create_success: Skill group %{skill_group} successfully created.
+      update_success: Skill group %{skill_group} successfully edited.
+      delete_success: Skill group %{skill_group} successfully deleted.
+      skill_already_added: Skill already added to the group.
+      skill_not_specified: Skill name not specified.
+      wrong_skill_name_specified: Skill not exist.
+      delete_confirmation: Are you sure you want to delete
+    field:
+      name: Name
+      description: Description
+    placeholder:
+      description: Short description
+    tooltip:
+      skill_list: Click to see skill list... 
   menu:
     languages:
       language: Language
