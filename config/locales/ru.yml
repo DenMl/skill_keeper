@@ -16,6 +16,8 @@ ru:
   contact: Контакты
   account: Аккаунт
   skills: Скилы
+  skill_groups: Группы скилов
+  general_error_msg: Ошибка в обработке данных...
   user_page:
     delete_button: Удалить
     title: Все пользователи
@@ -41,6 +43,7 @@ ru:
     password_field: Пароль
     password_confirmation_field: Подтверждение пароля
   skill:
+    skill: Скил
     title: Все скилы
     create_button: Создать
     edit_button: Редактировать
@@ -57,7 +60,39 @@ ru:
     description_field: Описание
     description_placeholder: Краткое описание
     accept_changes_button: Принять
-    delete_confirmation: Вы действительно хотите удалить 
+    delete_confirmation: Вы действительно хотите удалить
+  skill_group:
+    page: Список групп
+    title: 
+      all: Все группы
+      new: Новая группа
+      edit: Редактирование %{skill_group}
+      skill_list: Список скилов
+      delete_modal: Удаление группы
+    button:
+      create: Создать
+      edit: Редактировать
+      delete: Удалить
+      close: Закрыть
+      skill_list: Список скилов
+      add_skill: Добавить скил
+      remove_skill: Удалить
+      accept_changes: Принять
+    msg:
+      create_success: Группа %{skill_group} успешно создана.
+      update_success: Группа %{skill_group} успешно отредактирована.
+      delete_success: Группа %{skill_group} успешно удалена.
+      skill_already_added: Скил уже добавлен в группу.
+      skill_not_specified: Имя скила не указано.
+      wrong_skill_name_specified: Скила с таким именем не существует.
+      delete_confirmation: Вы действительно хотите удалить 
+    field:
+      name: Название
+      description: Описание
+    placeholder:
+      description: Краткое описание
+    tooltip:
+      skill_list: Нажмите для просмотра скилов... 
   menu:
     languages:
       language: Язык

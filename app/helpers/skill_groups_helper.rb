@@ -1,0 +1,2 @@
+module SkillGroupsHelper
+end
