@@ -7,7 +7,7 @@
 	</td>
 	<td>
 		<div class="col-md-3">
-		<%= link_to t('candidates.button.remove_skill'), remove_skill_from_candidate_path(candidate_id: @candidate.id, id: skill.id), method: :post, remote: true, class: "btn btn-xs btn-danger"%>
+		<%= link_to t('candidates.button.remove_skill'), remove_skill_from_candidate_path(skill_id: skill.id), method: :post, remote: true, class: "btn btn-xs btn-danger"%>
 		</div>
 	</td>
 </tr>

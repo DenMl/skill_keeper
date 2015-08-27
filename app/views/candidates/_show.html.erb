@@ -13,18 +13,19 @@
 						<tr>&nbsp;</tr>
 					</thead>
 					<tbody>
-						<% @skills.each do |skill| %>
+						<% @candidate.skills.each do |skill| %>
 							<%= render 'candidates/skill_list_item', skill: skill %>
 						<% end %>
 					</tbody>
 				</table>
 			</div>
 			<legend></legend>
-			<%= form_for @candidate, url: add_skill_to_candidate_path(id: @candidate.id), remote: true  do |f| %>
+			<%= form_for @candidate, url: add_skill_to_candidate_path, remote: true  do |f| %>
 				<div class="row">
 					<div class="col-md-4">
-						<%= autocomplete_field_tag :skill, '' ,  autocomplete_skill_name_candidates_path, placeholder: t('skill.skill') %>
+						<%= autocomplete_field_tag :skill, '' ,  autocomplete_skill_name_candidates_path, placeholder: t('skill.skill'), id: 'skillSelectorInput' %>
 					</div>
+					<input id="selectedSkillIdInput" type='hidden' name='skill_id' value='' />
 					<div class="col-md-2">
 						<%= f.submit t('candidates.button.add_skill'), class: 'btn btn-xs btn-warning' %>
 					</div>
@@ -36,3 +37,9 @@
 		</div>
 	</div>
 </div>	
+
+<script> //temporary solution while select2 is not used
+    $('#skillSelectorInput').bind('railsAutocomplete.select', function(event, data){
+        $('#selectedSkillIdInput').val(data.item.id);
+    });
+</script>

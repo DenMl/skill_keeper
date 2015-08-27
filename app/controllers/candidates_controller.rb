@@ -23,7 +23,6 @@ class CandidatesController < ApplicationController
 
   def show
     @candidate = Candidate.find(params[:id])
-    @skills = get_skills
   end
 
   def edit
@@ -59,14 +58,4 @@ class CandidatesController < ApplicationController
   def fetch
     @candidates = Candidate.paginate(page: params[:page], per_page: 15)
   end
-
-  def get_skills
-    skills = []
-    @candidate.skills.each do |item|
-      skills << Skill.find(item.skill_id)
-    end
-    skills
-  end
-
-
 end

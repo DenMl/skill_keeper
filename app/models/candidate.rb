@@ -1,5 +1,6 @@
 class Candidate < ActiveRecord::Base
 
-  has_many :skills, foreign_key: 'candidate_id',  class_name:  'CandidateToSkillRelationship', dependent: :destroy
+  has_many :candidate_to_skill_relationships, dependent: :destroy
+  has_many :skills, through: :candidate_to_skill_relationships
 
 end

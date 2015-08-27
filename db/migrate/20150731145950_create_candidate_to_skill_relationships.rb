@@ -6,5 +6,7 @@ class CreateCandidateToSkillRelationships < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :candidate_to_skill_relationships, [:skill_id, :candidate_id], unique: true, name: 'index_candidate_id_to_skill_id'
   end
 end
