@@ -1,0 +1,38 @@
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h3><%= t('candidates.title.skill_list')%></h3>
+		</div>
+		<div class="modal-body">
+			<ul class="errors list-group"></ul>
+			<h3><span class="label label-info"><%= @candidate.first_name %> <%= @candidate.last_name %></span></h3>
+			<div class="well">
+				<table class="table table-hover">
+					<thead>
+						<tr><b><%= t('skill.skill')%></b></tr>
+						<tr>&nbsp;</tr>
+					</thead>
+					<tbody>
+						<% @skills.each do |skill| %>
+							<%= render 'candidates/skill_list_item', skill: skill %>
+						<% end %>
+					</tbody>
+				</table>
+			</div>
+			<legend></legend>
+			<%= form_for @candidate, url: add_skill_to_candidate_path(id: @candidate.id), remote: true  do |f| %>
+				<div class="row">
+					<div class="col-md-4">
+						<%= autocomplete_field_tag :skill, '' ,  autocomplete_skill_name_candidates_path, placeholder: t('skill.skill') %>
+					</div>
+					<div class="col-md-2">
+						<%= f.submit t('candidates.button.add_skill'), class: 'btn btn-xs btn-warning' %>
+					</div>
+				</div>
+			<% end %>
+		</div>
+		<div class="modal-footer">
+			<%= link_to t('candidates.button.close'), '#', class: 'btn btn-default', data: {dismiss: 'modal'} %>
+		</div>
+	</div>
+</div>	
