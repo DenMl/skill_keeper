@@ -66,6 +66,7 @@ en:
       new: New candidate
       edit: Editing candidate %{first_name} %{last_name}
       delete: Deleting candidate
+      skill_list: Skill list
     confirmation:
       delete: Are you sure you want to delete
     button:
@@ -74,6 +75,8 @@ en:
       edit: Edit
       close: Close
       accept_changes: Accept
+      add_skill: Add skill
+      remove_skill: Remove
     field:
       first_name: First Name
       last_name: Last Name
@@ -86,6 +89,10 @@ en:
       create: Candidate %{first_name} %{last_name} successfully created
       update: Candidate %{first_name} %{last_name} successfully edited
       delete: Candidate %{first_name} %{last_name} successfully deleted
+    warning:
+      skill_already_added: Skill already added to the candidate.
+    tooltip:
+      skill_list: Click to see skill list...
   skill:
     skill: Skill
     title: All skills
@@ -104,7 +111,11 @@ en:
     description_field: Description
     description_placeholder: Short description
     accept_changes_button: Accept
-    delete_confirmation: Are you sure you want to delete  
+    delete_confirmation: Are you sure you want to delete
+    warning:
+      skill_not_specified: Skill name not specified.
+      wrong_skill_name_specified: Skill not exist.
+
   skill_group:
     page: Skills Groups
     title: 
@@ -127,8 +138,6 @@ en:
       update_success: Skill group %{skill_group} successfully edited.
       delete_success: Skill group %{skill_group} successfully deleted.
       skill_already_added: Skill already added to the group.
-      skill_not_specified: Skill name not specified.
-      wrong_skill_name_specified: Skill not exist.
       delete_confirmation: Are you sure you want to delete
     field:
       name: Name

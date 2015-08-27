@@ -2,6 +2,8 @@ class CandidatesController < ApplicationController
   before_action :signed_in_user
   respond_to :html, :js
 
+  autocomplete :skill, :name
+
   def index
     fetch
   end
@@ -17,6 +19,11 @@ class CandidatesController < ApplicationController
     if @candidate.save
       flash[:success] = t('candidates.success.create', first_name: @candidate.first_name, last_name: @candidate.last_name)
     end
+  end
+
+  def show
+    @candidate = Candidate.find(params[:id])
+    @skills = get_skills
   end
 
   def edit
@@ -52,5 +59,14 @@ class CandidatesController < ApplicationController
   def fetch
     @candidates = Candidate.paginate(page: params[:page], per_page: 15)
   end
+
+  def get_skills
+    skills = []
+    @candidate.skills.each do |item|
+      skills << Skill.find(item.skill_id)
+    end
+    skills
+  end
+
 
 end
