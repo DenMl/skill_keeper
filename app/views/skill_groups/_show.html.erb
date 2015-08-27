@@ -20,7 +20,7 @@
 				</table>
 			</div>
 			<legend></legend>
-			<%= form_for @skill_group, url: add_skill_path(id: @skill_group.id), remote: true  do |f| %>
+			<%= form_for @skill_group, url: add_skill_to_group_path(id: @skill_group.id), remote: true  do |f| %>
 				<div class="row">
 					<div class="col-md-4">
 						<%= autocomplete_field_tag :skill, '' ,  autocomplete_skill_name_skill_groups_path, placeholder: t('skill.skill') %>
