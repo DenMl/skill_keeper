@@ -6,5 +6,7 @@ class CreateSkillGroupToSkillRelationships < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :skill_group_to_skill_relationships, [:skill_id, :skill_group_id], unique: true, name: 'index_skill_group_id_to_skill_id'
   end
 end
