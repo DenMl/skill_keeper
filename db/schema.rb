@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20150731150002) do
     t.datetime "updated_at"
   end
 
+  add_index "candidate_to_skill_relationships", ["skill_id", "candidate_id"], name: "index_candidate_id_to_skill_id", unique: true
+
   create_table "candidates", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
