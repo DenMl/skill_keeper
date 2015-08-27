@@ -15,6 +15,8 @@ gem 'coffee-rails', '4.0.1'
 # gem 'therubyracer',  platforms: :ruby
 # Gem for localization
 gem 'rails-i18n', '4.0.4'
+# autocomplete gem
+gem 'rails4-autocomplete', '1.1.1'
 # Use jquery as the JavaScript library
 gem 'jquery-rails', '3.1.3'
 gem 'jquery-ui-rails', '5.0.5'

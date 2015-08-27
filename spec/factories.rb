@@ -15,4 +15,9 @@ FactoryGirl.define do
   	sequence(:description) {|n| "Skill #{n} short description."}
   end
 
+  factory :skill_group do
+    sequence(:name) { |n| "Skill group #{n}" }
+    sequence(:description) {|n| "Skill group #{n} short description."}
+  end
+
 end

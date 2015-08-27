@@ -1,0 +1,14 @@
+<tr>
+  <td>
+  	<span class="has-tooltip" data-toggle="tooltip" title="<%= t('skill_group.tooltip.skill_list')%>">
+  		<%= link_to skill_group.name, skill_group_path(skill_group), remote: true %>
+  	</span>
+  </td>
+  <td><%= skill_group.description %></td>
+  <td>
+    <div class="btn-group btn-group-xs">
+      <%= link_to t('skill_group.button.edit'), edit_skill_group_path(skill_group), remote: true, class: "btn btn-xs btn-default" %>
+      <%= link_to t('skill_group.button.delete'), skill_group_delete_path(skill_group), remote: true, class: "btn btn-warning btn-xs" %>
+    </div>
+  </td>
+</tr>

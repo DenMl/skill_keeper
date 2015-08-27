@@ -1,7 +1,90 @@
+@import "bootstrap-sprockets";
 @import "bootstrap";
 
 body { padding-top: 70px; }
 
 .pagination {
   display: block;
+}
+
+/* autocomplete */
+.ui-helper-hidden-accessible{
+        display:none;
+}
+ul.ui-autocomplete { 
+	position: absolute; 
+	cursor: default; 
+	background: #CCE;
+	z-index: 2006;
+	list-style:none;
+	padding: 2px;
+	margin-top: -3px;
+    margin: 0;
+    display:block;
+    float: left;
+}   
+
+li.ui-menu-item {
+    margin:0;
+    padding: 0;
+    zoom: 1;
+    float: left;
+    clear: left;
+    width: 100%;
+    }
+
+li.ui-state-focus {
+	background: #CC0;	
+	text-decoration:none;
+    display:block;
+    padding:.2em .4em;
+    line-height:1.5;
+}
+
+
+/* tooltip styling */
+#tooltip-sign{
+    display: none;
+}
+tr:hover #tooltip-sign{
+    display: inline-block;
+}
+
+.tooltip{
+    position:absolute;
+    z-index:2000;
+    display:block;
+    visibility:visible;
+    padding:5px;
+    font-size:14px;
+    opacity:0;
+    filter:alpha(opacity=0);
+
+    &.in{
+        opacity:.8;
+        filter:alpha(opacity=80);
+    }
+    &.top{
+        margin-top:-2px
+    }
+    &.right{
+        margin-left:2px
+    }
+    &.bottom{
+        margin-top:2px
+    }
+    &.left{
+        margin-left:-2px
+    }
+    &.top .tooltip-arrow{
+        bottom:0;
+        left:50%;
+        margin-left:-5px;
+        border-left:5px solid transparent;
+        border-right:5px solid transparent;
+        border-top:5px solid #000
+    }
+    &.left .tooltip-arrow{
+        top:50%;
+    }
 }
