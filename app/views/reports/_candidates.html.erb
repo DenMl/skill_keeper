@@ -1,9 +1,7 @@
-<div class="panel panel-success">
-  <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#candidates-<%= skill_group.id %>">
-    <h4 class="panel-title">
-      <p class="text-center">
-        <%= skill_group.candidates.count %>
-      </p>
+<div class="">
+  <div class="cursor-pointer" data-toggle="collapse" data-parent="#accordion" href="#candidates-<%= skill_group.id %>">
+    <h4 class="text-center">
+      <%= skill_group.candidates.count %>
     </h4>
   </div>
   <div id="candidates-<%= skill_group.id %>" class="panel-collapse collapse">
