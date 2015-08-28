@@ -160,5 +160,6 @@ en:
   report:
     name_field: Skill Group
     description_field: Description
+    candidates: Candidates
     back_button: Back
 
