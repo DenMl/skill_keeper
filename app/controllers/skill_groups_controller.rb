@@ -23,7 +23,6 @@ class SkillGroupsController < ApplicationController
 
   def show
   	@skill_group = SkillGroup.find(params[:id])
-  	@skills = get_skills
   end
 
   def edit
@@ -58,13 +57,5 @@ class SkillGroupsController < ApplicationController
 
   def fetch
     @skill_groups = SkillGroup.paginate(page: params[:page], per_page: 15)
-  end
-
-  def get_skills
-  	skills = []
-  	@skill_group.skills.each do |item|
-  		skills << Skill.find(item.skill_id)
-  	end
-  	skills
   end
 end

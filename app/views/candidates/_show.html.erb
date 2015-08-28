@@ -1,12 +1,11 @@
-
 <div class="modal-dialog">
 	<div class="modal-content">
 		<div class="modal-header">
-			<h3><%= t('skill_group.title.skill_list')%></h3>
+			<h3><%= t('candidates.title.skill_list')%></h3>
 		</div>
 		<div class="modal-body">
 			<ul class="errors list-group"></ul>
-			<h3><span class="label label-info"><%= @skill_group.name %></span></h3>
+			<h3><span class="label label-info"><%= @candidate.first_name %> <%= @candidate.last_name %></span></h3>
 			<div class="well">
 				<table class="table table-hover">
 					<thead>
@@ -14,30 +13,30 @@
 						<tr>&nbsp;</tr>
 					</thead>
 					<tbody>
-						<% @skill_group.skills.each do |skill| %>
-							<%= render 'skill_groups/skill_list_item', skill: skill %>
+						<% @candidate.skills.each do |skill| %>
+							<%= render 'candidates/skill_list_item', skill: skill %>
 						<% end %>
 					</tbody>
 				</table>
 			</div>
 			<legend></legend>
-			<%= form_for @skill_group, url: add_skill_to_group_path, remote: true  do |f| %>
+			<%= form_for @candidate, url: add_skill_to_candidate_path, remote: true  do |f| %>
 				<div class="row">
 					<div class="col-md-4">
-						<%= autocomplete_field_tag :skill, '' ,  autocomplete_skill_name_skill_groups_path, placeholder: t('skill.skill'), id: 'skillSelectorInput'%>
+						<%= autocomplete_field_tag :skill, '' ,  autocomplete_skill_name_candidates_path, placeholder: t('skill.skill'), id: 'skillSelectorInput' %>
 					</div>
-                    <input id="selectedSkillIdInput" type='hidden' name='skill_id' value='' />
+					<input id="selectedSkillIdInput" type='hidden' name='skill_id' value='' />
 					<div class="col-md-2">
-						<%= f.submit t('skill_group.button.add_skill'), class: "btn btn-xs btn-warning" %>
+						<%= f.submit t('candidates.button.add_skill'), class: 'btn btn-xs btn-warning' %>
 					</div>
 				</div>
 			<% end %>
 		</div>
 		<div class="modal-footer">
-			<%= link_to t('skill_group.button.close'), "#", class: "btn btn-default", data: {dismiss: "modal"} %>
+			<%= link_to t('candidates.button.close'), '#', class: 'btn btn-default', data: {dismiss: 'modal'} %>
 		</div>
 	</div>
-</div>
+</div>	
 
 <script> //temporary solution while select2 is not used
     $('#skillSelectorInput').bind('railsAutocomplete.select', function(event, data){

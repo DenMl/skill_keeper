@@ -1,0 +1,25 @@
+<% provide(:title, t('candidates.title.all')) %>
+<div class="container">
+  <h3>
+    <%= yield(:title) %>
+  </h3>
+  <%= will_paginate @candidates %>
+  <table class="table table-hover" id="candidates">
+    <thead>
+    <tr>
+      <th><%= t('candidates.table_column.first_name')%></th>
+      <th><%= t('candidates.table_column.last_name')%></th>
+      <th><%= t('candidates.table_column.patronymic')%></th>
+      <th>&nbsp;</th>
+    </tr>
+    </thead>
+    <tbody class="candidate-index">
+    <%= render 'candidates/index' %>
+    </tbody>
+  </table>
+  
+  <%= link_to t('candidates.button.create'), new_candidate_path, remote: true, class: 'btn btn-primary' %>
+</div>
+
+<div class="modal fade" id="candidate-modal" role="dialog" aria-labelledby="" aria-hidden="true">
+</div>

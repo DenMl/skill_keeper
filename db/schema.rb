@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20150731150002) do
     t.datetime "updated_at"
   end
 
+  add_index "candidate_to_skill_relationships", ["skill_id", "candidate_id"], name: "index_candidate_id_to_skill_id", unique: true
+
   create_table "candidates", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -52,6 +54,8 @@ ActiveRecord::Schema.define(version: 20150731150002) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "skill_group_to_skill_relationships", ["skill_id", "skill_group_id"], name: "index_skill_group_id_to_skill_id", unique: true
 
   create_table "skill_groups", force: true do |t|
     t.string   "name"

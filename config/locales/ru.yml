@@ -43,6 +43,40 @@ ru:
     email_field: Адрес электронной почты
     password_field: Пароль
     password_confirmation_field: Подтверждение пароля
+  candidates:
+    page: Кандидаты
+    title:
+      all: Все кандидаты
+      new: Новый кандидат
+      edit: Редактирование кандидата %{first_name} %{last_name}
+      delete: Удаление кандидата
+      skill_list: Список скилов
+    button:
+      create: Создать
+      delete: Удалить
+      edit: Редактировать
+      close: Закрыть
+      accept_changes: Принять
+      add_skill: Добавить скил
+      remove_skill: Удалить
+    table_column:
+      first_name: Имя
+      last_name: Фамилия
+      patronymic: Отчество
+    field:
+      first_name: Имя
+      last_name: Фамилия
+      patronymic: Отчество
+    confirmation:
+      delete: Вы действительно хотите удалить
+    success:
+      create: Кандидат %{first_name} %{last_name} успешно создан
+      update: Кандидат %{first_name} %{last_name} успешно отредактирован
+      delete: Кандидат %{first_name} %{last_name} успешно удален
+    warning:
+      skill_already_added: Скил уже добавлен кандидату.
+    tooltip:
+      skill_list: Нажмите для просмотра скилов...
   skill:
     skill: Скил
     title: Все скилы
@@ -62,6 +96,9 @@ ru:
     description_placeholder: Краткое описание
     accept_changes_button: Принять
     delete_confirmation: Вы действительно хотите удалить
+    warning:
+      skill_not_specified: Имя скила не указано.
+      wrong_skill_name_specified: Скила с таким именем не существует.
   skill_group:
     page: Список групп
     title: 
@@ -84,9 +121,7 @@ ru:
       update_success: Группа %{skill_group} успешно отредактирована.
       delete_success: Группа %{skill_group} успешно удалена.
       skill_already_added: Скил уже добавлен в группу.
-      skill_not_specified: Имя скила не указано.
-      wrong_skill_name_specified: Скила с таким именем не существует.
-      delete_confirmation: Вы действительно хотите удалить 
+      delete_confirmation: Вы действительно хотите удалить
     field:
       name: Название
       description: Описание
