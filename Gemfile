@@ -57,3 +57,4 @@ group :test do
   gem 'factory_girl_rails', '4.2.1'
 end
 
+gem 'schema_plus', '1.8.9'

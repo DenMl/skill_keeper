@@ -17,6 +17,7 @@ ru:
   account: Аккаунт
   skills: Скилы
   skill_groups: Группы скилов
+  reports: Отчеты
   general_error_msg: Ошибка в обработке данных...
   user_page:
     delete_button: Удалить

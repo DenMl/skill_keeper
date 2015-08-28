@@ -13,6 +13,13 @@
 
 ActiveRecord::Schema.define(version: 20150731150002) do
 
+  create_table "candidate_to_skill_relationships", force: true do |t|
+    t.integer  "candidate_id"
+    t.integer  "skill_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "candidates", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -21,14 +28,7 @@ ActiveRecord::Schema.define(version: 20150731150002) do
     t.datetime "updated_at"
   end
 
-  add_index "candidates", ["first_name", "last_name", "patronymic"], name: "index_candidate_on_first_name_and_last_name_and_patronymic", unique: true
-
-  create_table "candidate_to_skill_relationships", force: true do |t|
-    t.integer  "candidate_id"
-    t.integer  "skill_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+  add_index "candidates", ["first_name", "last_name", "patronymic"], name: "index_candidates_on_first_name_and_last_name_and_patronymic", unique: true
 
   create_table "report_template_to_skill_group_relationships", force: true do |t|
     t.integer  "report_template_id"

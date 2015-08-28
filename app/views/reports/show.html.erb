@@ -1,0 +1,33 @@
+<% provide(:title, @report_template.name) %>
+<div class="container">
+  <h3>
+    <%= @report_template.name %>
+  </h3>
+  <table class="table table-hover" id="report">
+    <thead>
+    <tr>
+      <th><%= t('report.name_field') %></th>
+      <th><%= t('report.description_field') %></th>
+      <th><%= t('report.persons') %></th>
+      <th>&nbsp;</th>
+    </tr>
+    </thead>
+    <tbody class="report-template-index">
+    <% @report_template.skill_groups.each do |skill_group| %>
+        <tr>
+          <td><%= skill_group.name %></td>
+          <td><%= skill_group.description %></td>
+          <td>
+            <% skill_group.candidates.each do |candidate| %>
+                <%= render 'reports/candidate', candidate: candidate%>
+            <% end %>
+          </td>
+          <td>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to t('report.back_button'), _back_url, class: "btn btn-primary" %>
+</div>

@@ -17,6 +17,8 @@ Rails.application.routes.draw do
     get :autocomplete_skill_group_name, on: :collection
   end
 
+  resources :reports
+
   #add/remove skill 
 
   match '/add_skill/:id', to: 'skill_actions#add_skill_to_group', via: 'patch', as: :add_skill_to_group
