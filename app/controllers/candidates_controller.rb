@@ -1,5 +1,6 @@
 class CandidatesController < ApplicationController
   before_action :signed_in_user
+  before_action :skill_ids_params_to_array, only: [:create, :update]
   respond_to :html, :js
 
   autocomplete :skill, :name
@@ -11,6 +12,7 @@ class CandidatesController < ApplicationController
   def new
     @candidate = Candidate.new
     @title = t('candidates.title.new')
+    @all_skills = Skill.all
   end
 
   def create
@@ -21,13 +23,10 @@ class CandidatesController < ApplicationController
     end
   end
 
-  def show
-    @candidate = Candidate.find(params[:id])
-  end
-
   def edit
     @candidate = Candidate.find(params[:id])
     @title = t('candidates.title.edit', first_name: @candidate.first_name, last_name: @candidate.last_name)
+    @all_skills = Skill.all
   end
 
   def update
@@ -52,7 +51,11 @@ class CandidatesController < ApplicationController
   private
 
   def candidate_params
-    params.require(:candidate).permit(:first_name, :last_name, :patronymic)
+    params.require(:candidate).permit(:first_name, :last_name, :patronymic, skill_ids: [])
+  end
+
+  def skill_ids_params_to_array #skill_ids come from UI as string with comma delimited
+    params[:candidate][:skill_ids] = params[:candidate][:skill_ids].split(',')
   end
 
   def fetch

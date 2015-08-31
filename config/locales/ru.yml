@@ -66,6 +66,7 @@ ru:
       first_name: Имя
       last_name: Фамилия
       patronymic: Отчество
+      skills: Скилы
     confirmation:
       delete: Вы действительно хотите удалить
     success:
@@ -74,8 +75,6 @@ ru:
       delete: Кандидат %{first_name} %{last_name} успешно удален
     warning:
       skill_already_added: Скил уже добавлен кандидату.
-    tooltip:
-      skill_list: Нажмите для просмотра скилов...
   skill:
     skill: Скил
     title: Все скилы
@@ -124,10 +123,9 @@ ru:
     field:
       name: Название
       description: Описание
+      skills: Скилы
     placeholder:
       description: Краткое описание
-    tooltip:
-      skill_list: Нажмите для просмотра скилов... 
   menu:
     languages:
       language: Язык
