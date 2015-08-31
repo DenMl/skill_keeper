@@ -17,6 +17,7 @@ ru:
   account: Аккаунт
   skills: Скилы
   skill_groups: Группы скилов
+  reports: Отчеты
   general_error_msg: Ошибка в обработке данных...
   user_page:
     delete_button: Удалить
@@ -130,4 +131,13 @@ ru:
     languages:
       language: Язык
       ru: Русский
-      en: Английский	
+      en: Английский
+  report_template:
+    name_field: Шаблон
+    description_field: Описание
+    generate_button: Сгенерить
+  report:
+    name_field: Группа
+    description_field: Описание
+    candidates: Кандидаты
+    back_button: Назад

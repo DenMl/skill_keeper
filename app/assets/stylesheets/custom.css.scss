@@ -93,3 +93,21 @@ tr:hover #tooltip-sign{
 .modal-dialog .select2-container {
   width: 100%;
 }
+
+/* cursor pointers */
+
+.cursor-pointer {
+  cursor:pointer;
+}
+
+.cursor-croshair{
+  cursor: crosshair;
+}
+
+.cursor-eresize{
+  cursor: e-resize;
+}
+
+.cursor-move{
+  cursor: move;
+}

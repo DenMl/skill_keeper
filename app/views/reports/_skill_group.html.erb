@@ -1,0 +1,16 @@
+<div class="">
+  <div class="cursor-pointer" data-toggle="collapse" data-parent="#accordion" href="#skill-group-<%= skill_group.id %>">
+    <p>
+      <%= skill_group.name %>
+    </p>
+  </div>
+  <div id="skill-group-<%= skill_group.id %>" class="panel-collapse collapse">
+    <div class="panel-body">
+      <ul>
+        <% skill_group.skills.each do |skill| %>
+            <li class="" data-placement="left" data-toggle="tooltip" title="<%= escape_once(skill.description) %>"><%= skill.name %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
