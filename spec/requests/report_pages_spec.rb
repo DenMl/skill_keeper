@@ -37,34 +37,63 @@ describe "Report pages" do
     let(:skill2) { FactoryGirl.create(:skill) }
     let(:skill3) { FactoryGirl.create(:skill) }
 
-    candidate1 =  FactoryGirl.create(:candidate)
-    candidate1.candidate_to_skill_relationships.create(skill_id: skill1.id)
-    candidate1.candidate_to_skill_relationships.create(skill_id: skill2.id)
+    let(:candidate1) {
+      candidate = FactoryGirl.create(:candidate)
+      candidate.candidate_to_skill_relationships.create(skill_id: skill1.id)
+      candidate.candidate_to_skill_relationships.create(skill_id: skill2.id)
+      candidate
+    }
 
-    let(:candidate2) { FactoryGirl.create(:candidate) }
-    candidate2.candidate_to_skill_relationships.create(skill_id: skill2.id)
-    candidate2.candidate_to_skill_relationships.create(skill_id: skill3.id)
+    let(:candidate2) {
+      candidate = FactoryGirl.create(:candidate)
+      candidate.candidate_to_skill_relationships.create(skill_id: skill2.id)
+      candidate.candidate_to_skill_relationships.create(skill_id: skill3.id)
+      candidate
+    }
 
-    let(:candidate3) { FactoryGirl.create(:candidate) }
-    candidate3.candidate_to_skill_relationships.create(skill_id: skill3.id)
+    let(:candidate3) {
+      candidate = FactoryGirl.create(:candidate)
+      candidate.candidate_to_skill_relationships.create(skill_id: skill3.id)
+      candidate
+    }
 
-    let(:skill_group1) { FactoryGirl.create(:skill_group) }
-    skill_group1.skill_group_to_skill_relationships.create(skill_id: skill1.id)
-    skill_group1.skill_group_to_skill_relationships.create(skill_id: skill2.id)
+    let(:skill_group1) {
+      skill_group = FactoryGirl.create(:skill_group)
+      skill_group.skill_group_to_skill_relationships.create(skill_id: skill1.id)
+      skill_group.skill_group_to_skill_relationships.create(skill_id: skill2.id)
+      skill_group
+    }
 
-    let(:skill_group2) { FactoryGirl.create(:skill_group) }
-    skill_group2.skill_group_to_skill_relationships.create(skill_id: skill2.id)
-    skill_group2.skill_group_to_skill_relationships.create(skill_id: skill3.id)
+    let(:skill_group2) {
+      skill_group = FactoryGirl.create(:skill_group)
+      skill_group.skill_group_to_skill_relationships.create(skill_id: skill2.id)
+      skill_group.skill_group_to_skill_relationships.create(skill_id: skill3.id)
+      skill_group
+    }
 
-    let(:report_template) { FactoryGirl.create(:report_template) }
-    report_template.report_template_to_skill_group_relationships.create(skill_group_id: skill_group1.id)
-    report_template.report_template_to_skill_group_relationships.create(skill_group_id: skill_group2.id)
+    let(:report_template) {
+      report_template = FactoryGirl.create(:report_template)
+      report_template.report_template_to_skill_group_relationships.create(skill_group_id: skill_group1.id)
+      report_template.report_template_to_skill_group_relationships.create(skill_group_id: skill_group2.id)
+      report_template
+    }
 
-    before { sign_in user }
     before { visit report_path(report_template) }
 
     it { should have_title(report_template.name) }
     it { should have_content(report_template.name) }
+
+    it "should list each skill group of the template" do
+      report_template.skill_groups.each do |skill_group|
+        expect(page).to have_selector('tbody tr td:first-child div p', text: skill_group.name)
+      end
+    end
+
+    it "should list count of candidates per every skill group" do
+      report_template.skill_groups.each do |skill_group|
+        expect(page).to have_selector('tbody tr td:nth-child(3) h4', text: skill_group.candidates.count)
+      end
+    end
 
   end
 
