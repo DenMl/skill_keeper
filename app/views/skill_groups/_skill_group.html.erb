@@ -1,9 +1,5 @@
 <tr>
-  <td>
-  	<span class="has-tooltip" data-toggle="tooltip" title="<%= t('skill_group.tooltip.skill_list')%>">
-  		<%= link_to skill_group.name, skill_group_path(skill_group), remote: true %>
-  	</span>
-  </td>
+  <td><%=skill_group.name%></td>
   <td><%= skill_group.description %></td>
   <td>
     <div class="btn-group btn-group-xs">

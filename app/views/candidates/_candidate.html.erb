@@ -1,8 +1,6 @@
 <tr>
   <td>
-    <span class="has-tooltip" data-toggle="tooltip" title="<%= t('candidates.tooltip.skill_list')%>">
-  		<%= link_to candidate.first_name, candidate_path(candidate), remote: true %>
-  	</span>
+    <%= candidate.first_name%>
   </td>
   <td><%= candidate.last_name %></td>
   <td><%= candidate.patronymic %></td>

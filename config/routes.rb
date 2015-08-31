@@ -18,14 +18,6 @@ Rails.application.routes.draw do
     get :autocomplete_skill_group_name, on: :collection
   end
 
-  #add/remove skill 
-
-  match '/add_skill_to_group/:id', to: 'skill_actions#add_skill_to_group', via: 'patch', as: :add_skill_to_group
-  match '/remove_skill_from_group/:id', to: 'skill_actions#remove_skill_from_group', via: 'post', as: :remove_skill_from_group
-
-  match '/add_skill_to_candidate/:id', to: 'skill_actions#add_skill_to_candidate', via: 'patch', as: :add_skill_to_candidate
-  match '/remove_skill_from_candidate/:id', to: 'skill_actions#remove_skill_from_candidate', via: 'post', as: :remove_skill_from_candidate
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
