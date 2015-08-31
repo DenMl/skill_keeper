@@ -1,9 +1,0 @@
-var errors = $("ul.errors");
-errors.html("");
-<% if @candidate.errors.any? %>
-    <% @candidate.errors.full_messages.each do |message| %>
-        errors.append($("<li />").addClass("list-group-item list-group-item-danger").html("<%= message.html_safe %>"));
-    <% end %>
-<% else %>
-    $("#candidate-modal").html("<%= j (render 'candidates/show') %>").modal("show");
-<% end %>

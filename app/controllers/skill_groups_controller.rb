@@ -1,5 +1,7 @@
 class SkillGroupsController < ApplicationController
-  before_action :signed_in_user
+  before_action :signed_in_user, only: [:edit, :update]
+  before_action :skill_ids_params_to_array, only: [:create, :update]
+
   respond_to :html, :js
 
   autocomplete :skill, :name
@@ -11,6 +13,7 @@ class SkillGroupsController < ApplicationController
   def new
     @skill_group = SkillGroup.new
     @title = t('skill_group.title.new')
+    @all_skills = Skill.all
   end
 
   def create
@@ -21,13 +24,10 @@ class SkillGroupsController < ApplicationController
     end
   end
 
-  def show
-  	@skill_group = SkillGroup.find(params[:id])
-  end
-
   def edit
       @skill_group = SkillGroup.find(params[:id])
       @title = t('skill_group.title.edit', skill_group: @skill_group.name)
+      @all_skills = Skill.all
   end
 
   def update
@@ -52,7 +52,11 @@ class SkillGroupsController < ApplicationController
   private
 
   def skill_group_params
-    params.require(:skill_group).permit(:name, :description)
+    params.require(:skill_group).permit(:name, :description, skill_ids: [])
+  end
+
+  def skill_ids_params_to_array #skill_ids come from UI as string with comma delimited
+    params[:skill_group][:skill_ids] = params[:skill_group][:skill_ids].split(',')
   end
 
   def fetch
