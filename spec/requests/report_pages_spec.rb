@@ -95,6 +95,12 @@ describe "Report pages" do
       end
     end
 
+    it "should list candidates per every skill group" do
+      report_template.skill_groups.each do |skill_group|
+        expect(page).to have_selector('tbody tr td:nth-child(3) li', count: skill_group.candidates.count)
+      end
+    end
+
   end
 
 end
