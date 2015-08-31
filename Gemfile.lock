@@ -131,9 +131,6 @@ GEM
       sass (~> 3.2.2)
       sprockets (~> 2.8, < 3.0)
       sprockets-rails (~> 2.0)
-    schema_plus (1.8.9)
-      activerecord (>= 3.2, <= 4.2.0)
-      valuable
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
@@ -167,7 +164,6 @@ GEM
     uglifier (2.7.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    valuable (0.9.9)
     websocket (1.0.7)
     will_paginate (3.0.7)
     xpath (2.0.0)
@@ -193,7 +189,6 @@ DEPENDENCIES
   rails4-autocomplete (= 1.1.1)
   rspec-rails (= 2.13.1)
   sass-rails (= 4.0.5)
-  schema_plus (= 1.8.9)
   sdoc (= 0.4.1)
   select2-rails
   selenium-webdriver (= 2.35.1)

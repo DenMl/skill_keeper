@@ -131,4 +131,13 @@ ru:
     languages:
       language: Язык
       ru: Русский
-      en: Английский	
+      en: Английский
+  report_template:
+    name_field: Шаблон
+    description_field: Описание
+    generate_button: Сгенерить
+  report:
+    name_field: Группа
+    description_field: Описание
+    candidates: Кандидаты
+    back_button: Назад

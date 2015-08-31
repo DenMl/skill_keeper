@@ -18,7 +18,8 @@ Rails.application.routes.draw do
     get :autocomplete_skill_group_name, on: :collection
   end
 
-  resources :reports
+  resources :reports, only: [:index, :show]
+
 # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

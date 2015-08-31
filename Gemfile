@@ -58,5 +58,3 @@ group :test do
   gem 'capybara', '2.1.0'
   gem 'factory_girl_rails', '4.2.1'
 end
-
-gem 'schema_plus', '1.8.9'

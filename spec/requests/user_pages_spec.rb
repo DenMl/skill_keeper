@@ -4,7 +4,7 @@ describe "User pages" do
 
   subject { page }
 
-  describe "index" do
+  describe "reports/index" do
     let(:user) { FactoryGirl.create(:user) }
     before(:each) do
       sign_in user
