@@ -83,6 +83,7 @@ en:
       first_name: First Name
       last_name: Last Name
       patronymic: Patronymic
+      skills: Skills
     table_column:
       first_name: First Name
       last_name: Last Name
@@ -93,8 +94,6 @@ en:
       delete: Candidate %{first_name} %{last_name} successfully deleted
     warning:
       skill_already_added: Skill already added to the candidate.
-    tooltip:
-      skill_list: Click to see skill list...
   skill:
     skill: Skill
     title: All skills
@@ -144,10 +143,9 @@ en:
     field:
       name: Name
       description: Description
+      skills: Skills
     placeholder:
       description: Short description
-    tooltip:
-      skill_list: Click to see skill list... 
   menu:
     languages:
       language: Language

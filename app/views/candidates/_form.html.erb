@@ -22,6 +22,11 @@
                 <%= f.label t('candidates.field.patronymic'), class: 'control-label' %>
                 <%= f.text_field :patronymic, class: 'form-control' %>
               </div>
+              <div>
+                <%= f.label t('candidates.field.skills'), class: 'control-label' %>
+                <%= select_tag '', options_from_collection_for_select(@all_skills, "id", "name", @candidate.skill_ids), id: "skillsSelector", multiple: "multiple" %>
+              </div>
+              <%= f.hidden_field :skill_ids, id: 'hiddenSkillIds' %>
             </div>
           </div>
         </div>
@@ -36,6 +41,14 @@
     </div>
 
 <% end %>
+<script>
+    $(function() {
+        $("#skillsSelector").select2();
+        $('#skillsSelector').on("change", function(){
+            $('#hiddenSkillIds').val($('#skillsSelector').val());
+        });
+    });
+</script>
 
 
 
