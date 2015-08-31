@@ -39,5 +39,5 @@ Rails.application.configure do
 
   # Speed up tests by lowering bcrypt's cost function.
   ActiveModel::SecurePassword.min_cost = true
-
+  config.allow_concurrency = false
 end

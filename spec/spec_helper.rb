@@ -3,6 +3,9 @@ ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
+require 'capybara/rspec'
+require 'capybara/rails'
+require 'selenium-webdriver'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -41,4 +44,10 @@ RSpec.configure do |config|
   config.order = "random"
 
   config.include Capybara::DSL
+
+  Capybara.app_host = 'http://0.0.0.0:3000'
+#  Capybara.run_server = true
+  Capybara.server_port = 3000
+  Capybara.default_wait_time = 20
+  
 end
