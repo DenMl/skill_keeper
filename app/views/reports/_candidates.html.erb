@@ -11,7 +11,7 @@
         <% skill_group.candidates.each do |candidate| %>
             <li class="list-group-item">
               <span class="badge" data-toggle="tooltip" title="<%= escape_once(candidate.skills.map(&:name).join(', ')) %>"><%= candidate.skills.count %></span>
-              <%= candidate.last_name %> <%= candidate.first_name %> <%= candidate.patronymic %>
+              <%= link_to [candidate.last_name, candidate.first_name, candidate.patronymic].join(''), candidate_path(candidate), remote: true %>
             </li>
         <% end %>
       </ul>
