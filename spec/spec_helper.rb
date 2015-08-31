@@ -45,9 +45,4 @@ RSpec.configure do |config|
 
   config.include Capybara::DSL
 
-  Capybara.app_host = 'http://0.0.0.0:3000'
-#  Capybara.run_server = true
-  Capybara.server_port = 3000
-  Capybara.default_wait_time = 20
-  
 end
