@@ -1,0 +1,10 @@
+$("ul.errors").html("")
+<% if @report_template.errors.any? %>
+	<% @report_template.errors.full_messages.each do |message| %>
+		$("ul.errors").append($("<li />").addClass("list-group-item list-group-item-danger").html("<%= message.html_safe %>"))
+	<% end %>
+<% else %>
+	$(".report_template-index").html("<%= j (render 'report_templates/index' ) %>")
+	location.reload(true)
+	$("#report_template-modal").modal("hide")
+<% end %>

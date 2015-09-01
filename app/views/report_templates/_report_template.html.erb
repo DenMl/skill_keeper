@@ -1,0 +1,10 @@
+<tr>
+  <td><%=report_template.name%></td>
+  <td><%= report_template.description %></td>
+  <td>
+    <div class="btn-group btn-group-xs">
+      <%= link_to t('report_template.button.edit'), edit_report_template_path(report_template), remote: true, class: "btn btn-xs btn-default" %>
+      <%= link_to t('report_template.button.delete'), report_template_delete_path(report_template), remote: true, class: "btn btn-warning btn-xs" %>
+    </div>
+  </td>
+</tr>
