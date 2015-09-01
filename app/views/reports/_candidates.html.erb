@@ -1,0 +1,20 @@
+<div class="">
+  <div class="cursor-pointer" data-toggle="collapse" data-parent="#accordion" href="#candidates-<%= skill_group.id %>">
+    <h4 class="text-center">
+      <%= skill_group.candidates.count %>
+    </h4>
+  </div>
+  <div id="candidates-<%= skill_group.id %>" class="panel-collapse collapse">
+    <div class="panel-body">
+      <ul class="list-group">
+
+        <% skill_group.candidates.each do |candidate| %>
+            <li class="list-group-item">
+              <span class="badge" data-toggle="tooltip" title="<%= escape_once(candidate.skills.map(&:name).join(', ')) %>"><%= candidate.skills.count %></span>
+              <%= link_to [candidate.last_name, candidate.first_name, candidate.patronymic].join(''), edit_candidate_path(candidate), remote: true %>
+            </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

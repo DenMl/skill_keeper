@@ -1,0 +1,38 @@
+<% provide(:title, @report_template.name) %>
+<div class="container">
+  <h2 class="text-center">
+    <%= @report_template.name %>
+  </h2>
+
+  <p>
+    <%= @report_template.description %>
+  </p>
+  <table class="table table-striped" id="report">
+    <thead>
+    <tr>
+      <th width="20%"><%= t('report.name_field') %></th>
+      <th width="30%"><%= t('report.description_field') %></th>
+      <th class="text-center"><%= t('report.candidates') %></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @report_template.skill_groups.each do |skill_group| %>
+        <tr>
+          <td>
+            <%= render 'reports/skill_group', skill_group: skill_group %>
+          </td>
+          <td><%= skill_group.description %></td>
+          <td>
+            <%= render 'reports/candidates', skill_group: skill_group %>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <div class="col-md-12 text-center">
+    <%= link_to t('report.back_button'), _back_url, class: "btn btn-primary btn-width-sm" %>
+  </div>
+</div>
+
+<div class="modal fade" id="candidate-modal" role="dialog" aria-labelledby="" aria-hidden="true">
+</div>

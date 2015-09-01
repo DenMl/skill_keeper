@@ -26,4 +26,9 @@ FactoryGirl.define do
     sequence(:description) {|n| "Skill group #{n} short description."}
   end
 
+  factory :report_template do
+    sequence(:name) { |n| "Report template #{n}" }
+    sequence(:description) {|n| "Report template #{n} short description."}
+  end
+
 end

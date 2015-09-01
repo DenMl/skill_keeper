@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 
   #resources :skills, only: [:index, :new, :create, :edit, :update, :destroy]
   #resources :candidates, only: [:index, :new, :create, :edit, :update, :destroy]
+  resources :report_templates do
+    get "delete"
+  end
 
   resources :skills, :candidates, :skill_groups do
     get "delete"
@@ -18,7 +21,9 @@ Rails.application.routes.draw do
     get :autocomplete_skill_group_name, on: :collection
   end
 
-  # The priority is based upon order of creation: first created -> highest priority.
+  resources :reports, only: [:index, :show]
+
+# The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"

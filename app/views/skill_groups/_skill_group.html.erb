@@ -2,7 +2,7 @@
   <td><%=skill_group.name%></td>
   <td><%= skill_group.description %></td>
   <td>
-    <div class="btn-group btn-group-xs">
+    <div class="btn-group btn-group-xs btn-group-width-xs">
       <%= link_to t('skill_group.button.edit'), edit_skill_group_path(skill_group), remote: true, class: "btn btn-xs btn-default" %>
       <%= link_to t('skill_group.button.delete'), skill_group_delete_path(skill_group), remote: true, class: "btn btn-warning btn-xs" %>
     </div>

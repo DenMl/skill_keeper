@@ -11,12 +11,12 @@
             <div class="col-md-12">
               <ul class="errors list-group"></ul>
               <div>
-                <%= f.label t('candidates.field.first_name'), class: 'control-label' %>
-                <%= f.text_field :first_name, class: 'form-control' %>
-              </div>
-              <div>
                 <%= f.label t('candidates.field.last_name'), class: 'control-label' %>
                 <%= f.text_field :last_name, class: 'form-control' %>
+              </div>
+              <div>
+                <%= f.label t('candidates.field.first_name'), class: 'control-label' %>
+                <%= f.text_field :first_name, class: 'form-control' %>
               </div>
               <div>
                 <%= f.label t('candidates.field.patronymic'), class: 'control-label' %>
@@ -44,6 +44,7 @@
 <script>
     $(function() {
         $("#skillsSelector").select2();
+        $('#hiddenSkillIds').val($('#skillsSelector').val());
         $('#skillsSelector').on("change", function(){
             $('#hiddenSkillIds').val($('#skillsSelector').val());
         });

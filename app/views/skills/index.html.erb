@@ -1,23 +1,29 @@
 <% provide(:title, t('skill.title')) %>
 <div class="container">
-  <h3>
+  <h2 class="text-center">
     <%= yield(:title) %>
-  </h3>
-  <%= will_paginate @skills %>
+  </h2>
+
+  <div class="col-md-12 text-center">
+    <%= will_paginate @skills %>
+  </div>
   <table class="table table-hover" id="skills">
     <thead>
     <tr>
-      <th><%= t('skill.name_field')%></th>
-      <th><%= t('skill.description_field')%></th>
+      <th><%= t('skill.name_field') %></th>
+      <th><%= t('skill.description_field') %></th>
       <th>&nbsp;</th>
     </tr>
     </thead>
     <tbody class="skill-index">
-      <%= render "skills/index" %>
+    <%= render "skills/index" %>
     </tbody>
   </table>
-  <%= link_to t('skill.create_button'), new_skill_path, remote: true, class: "btn btn-primary" %>
+  <div class="col-md-12 text-center">
+    <%= link_to t('skill.create_button'), new_skill_path, remote: true, class: "btn btn-primary btn-width-sm" %>
+  </div>
 </div>
 
 <div class="modal fade" id="skill-modal" role="dialog" aria-labelledby="" aria-hidden="true">
 </div>
+

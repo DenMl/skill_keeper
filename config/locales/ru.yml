@@ -17,6 +17,8 @@ ru:
   account: Аккаунт
   skills: Скилы
   skill_groups: Группы скилов
+  reports: Отчеты
+  report_templates: Шаблоны
   general_error_msg: Ошибка в обработке данных...
   user_page:
     delete_button: Удалить
@@ -130,4 +132,36 @@ ru:
     languages:
       language: Язык
       ru: Русский
-      en: Английский	
+      en: Английский
+  report_template:
+    page: Шаблоны отчетов
+    name_field: Шаблон
+    description_field: Описание
+    generate_button: Сгенерить
+    title:
+      all: Все шаблоны отчетов
+      new: Новый шаблон отчета
+      edit: Редактирование %{report_template}
+      delete_modal: Удаление шаблона
+    msg:
+      create_success: Шаблон отчета %{report_template} успешно создана.
+      update_success: Шаблон отчета %{report_template} успешно отредактирован.
+      delete_success: Шаблон отчета %{report_template} успешно удален.
+      delete_confirmation: Вы действительно хотите удалить
+    field:
+      name: Название
+      description: Описание
+      skill_groups: Группы скилов
+    placeholder:
+      description: Краткое описание
+    button:
+      create: Создать
+      edit: Редактировать
+      delete: Удалить
+      close: Закрыть
+      accept_changes: Принять
+  report:
+    name_field: Группа
+    description_field: Описание
+    candidates: Кандидаты
+    back_button: Назад

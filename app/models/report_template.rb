@@ -2,6 +2,8 @@ class ReportTemplate < ActiveRecord::Base
 
   validates :name, presence: true, uniqueness: true
 
-  has_many :skill_groups, foreign_key: 'report_template_id',  class_name:  'ReportTemplateToSkillGroupRelationship', dependent: :destroy
+  has_many :report_template_to_skill_group_relationships, dependent: :destroy
+  has_many :skill_groups, through: :report_template_to_skill_group_relationships
+
 
 end
