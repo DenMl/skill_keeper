@@ -1,15 +1,18 @@
 <% provide(:title, t('candidates.title.all')) %>
 <div class="container">
-  <h3>
+  <h2 class="text-center">
     <%= yield(:title) %>
-  </h3>
-  <%= will_paginate @candidates %>
+  </h2>
+
+  <div class="col-md-12 text-center">
+    <%= will_paginate @candidates %>
+  </div>
   <table class="table table-hover" id="candidates">
     <thead>
     <tr>
-      <th><%= t('candidates.table_column.first_name')%></th>
-      <th><%= t('candidates.table_column.last_name')%></th>
-      <th><%= t('candidates.table_column.patronymic')%></th>
+      <th><%= t('candidates.table_column.last_name') %></th>
+      <th><%= t('candidates.table_column.first_name') %></th>
+      <th width="99%"><%= t('candidates.table_column.patronymic') %></th>
       <th>&nbsp;</th>
     </tr>
     </thead>
@@ -17,8 +20,11 @@
     <%= render 'candidates/index' %>
     </tbody>
   </table>
-  
-  <%= link_to t('candidates.button.create'), new_candidate_path, remote: true, class: 'btn btn-primary' %>
+
+  <div class="col-md-12 text-center">
+    <%= link_to t('candidates.button.create'), new_candidate_path, remote: true, class: 'btn btn-primary btn-width-sm' %>
+  </div>
+
 </div>
 
 <div class="modal fade" id="candidate-modal" role="dialog" aria-labelledby="" aria-hidden="true">
