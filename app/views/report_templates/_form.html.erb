@@ -1,0 +1,47 @@
+<%= form_for @report_template, remote: true, html: {class: "form-horizontal", style: "display:inline;", id:'reportTemplateForm'} do |f| %>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">
+            <%= @title %>
+          </h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12">
+              <ul class="errors list-group"></ul>
+              <div>
+                <%= f.label t('report_template.field.name'), class: 'control-label' %>
+                <%= f.text_field :name, class: 'form-control' %>
+              </div>
+              <div>
+                <%= f.label t('report_template.field.description'), class: 'control-label' %>
+                <%= f.text_area :description, class: 'form-control', rows: 3, placeholder: t('report_template.placeholder.description') %>
+              </div>
+              <div>
+                <%= f.label t('report_template.field.skill_groups'), class: 'control-label' %>
+                <%= select_tag '', options_from_collection_for_select(@all_skill_groups, "id", "name", @report_template.skill_group_ids), id: "skillGroupsSelector", multiple: "multiple" %>
+              </div>
+              <%= f.hidden_field :skill_group_ids, id: 'hiddenSkillGroupIds' %>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            <%= t('report_template.button.close')%>
+          </button>
+          <%= f.submit t('report_template.button.accept_changes'), class: "btn btn-primary" %>
+        </div>
+      </div>
+
+    </div>
+<% end %>
+<script>
+    $(function() {
+        $("#skillGroupsSelector").select2();
+        $('#hiddenSkillGroupIds').val($('#skillGroupsSelector').val());
+        $('#skillGroupsSelector').on("change", function(){
+            $('#hiddenSkillGroupIds').val($('#skillGroupsSelector').val());
+        });
+    });
+</script>

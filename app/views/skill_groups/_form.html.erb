@@ -39,6 +39,7 @@
 <script>
     $(function() {
         $("#skillsSelector").select2();
+        $('#hiddenSkillIds').val($('#skillsSelector').val());
         $('#skillsSelector').on("change", function(){
             $('#hiddenSkillIds').val($('#skillsSelector').val());
         });

@@ -1,5 +1,5 @@
 class SkillGroupsController < ApplicationController
-  before_action :signed_in_user, only: [:edit, :update]
+  before_action :signed_in_user
   before_action :skill_ids_params_to_array, only: [:create, :update]
 
   respond_to :html, :js

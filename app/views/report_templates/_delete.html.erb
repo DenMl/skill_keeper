@@ -1,0 +1,15 @@
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h3><%= t('report_template.title.delete_modal')%></h3>
+		</div>
+		<div class="modal-body">
+			<ul class="errors"></ul>
+			<%= t('report_template.msg.delete_confirmation') %> <b><%= @report_template.name %></b>?
+		</div>
+		<div class="modal-footer">
+			<%= link_to t('report_template.button.accept_changes'), report_template_path(@report_template), method: :delete, remote: true, class: "btn btn-danger" %>
+			<%= link_to t('report_template.button.close'), "#", class: "btn", data: {dismiss: "modal"} %>
+		</div>
+	</div>
+</div>	

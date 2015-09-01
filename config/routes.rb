@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 
   #resources :skills, only: [:index, :new, :create, :edit, :update, :destroy]
   #resources :candidates, only: [:index, :new, :create, :edit, :update, :destroy]
+  resources :report_templates do
+    get "delete"
+  end
 
   resources :skills, :candidates, :skill_groups do
     get "delete"

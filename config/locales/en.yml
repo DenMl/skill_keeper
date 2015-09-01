@@ -36,6 +36,7 @@ en:
   skills: Skills
   skill_groups: Skill Groups
   reports: Reports
+  report_templates: Report Templates
   general_error_msg: An error occured during processing request...
   user_page:
     delete_button: Delete
@@ -152,9 +153,32 @@ en:
       ru: Russian
       en: English
   report_template:
+    page: Report Templates
     name_field: Name
     description_field: Description
     generate_button: Generate
+    title:
+      all: All report templates
+      new: New report template
+      edit: Editing %{report_template}
+      delete_modal: Deleting report template
+    msg:
+      create_success: Report template %{report_template} successfully created.
+      update_success: Skill group %{report_template} successfully edited.
+      delete_success: Skill group %{skill_group} successfully deleted.
+      delete_confirmation: Are you sure you want to delete
+    field:
+      name: Name
+      description: Description
+      skill_groups: Skill groups
+    placeholder:
+      description: Short description
+    button:
+      create: Create
+      edit: Edit
+      delete: Delete
+      close: Close
+      accept_changes: Accept
   report:
     name_field: Skill Group
     description_field: Description
