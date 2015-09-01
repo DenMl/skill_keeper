@@ -1,22 +1,27 @@
 <% provide(:title, t('skill_group.page')) %>
 <div class="container">
-  <h3>
+  <h2 class="text-center">
     <%= t('skill_group.title.all') %>
-  </h3>
-  <%= will_paginate @skill_groups %>
+  </h2>
+
+  <div class="col-md-12 text-center">
+    <%= will_paginate @skill_groups %>
+  </div>
   <table class="table table-hover" id="skill_groups">
     <thead>
     <tr>
-      <th><%= t('skill_group.field.name')%></th>
-      <th><%= t('skill_group.field.description')%></th>
+      <th><%= t('skill_group.field.name') %></th>
+      <th><%= t('skill_group.field.description') %></th>
       <th>&nbsp;</th>
     </tr>
     </thead>
     <tbody class="skill_group-index">
-      <%= render "skill_groups/index" %>
+    <%= render "skill_groups/index" %>
     </tbody>
   </table>
-  <%= link_to t('skill_group.button.create'), new_skill_group_path, remote: true, class: "btn btn-primary" %>
+  <div class="col-md-12 text-center">
+    <%= link_to t('skill_group.button.create'), new_skill_group_path, remote: true, class: "btn btn-primary btn-width-sm" %>
+  </div>
 </div>
 
 <div class="modal fade" id="skill_group-modal" role="dialog" aria-labelledby="" aria-hidden="true">

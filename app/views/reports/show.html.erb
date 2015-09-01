@@ -1,8 +1,12 @@
 <% provide(:title, @report_template.name) %>
 <div class="container">
-  <h3>
+  <h2 class="text-center">
     <%= @report_template.name %>
-  </h3>
+  </h2>
+
+  <p>
+    <%= @report_template.description %>
+  </p>
   <table class="table table-striped" id="report">
     <thead>
     <tr>
@@ -25,7 +29,9 @@
     <% end %>
     </tbody>
   </table>
-  <%= link_to t('report.back_button'), _back_url, class: "btn btn-primary" %>
+  <div class="col-md-12 text-center">
+    <%= link_to t('report.back_button'), _back_url, class: "btn btn-primary btn-width-sm" %>
+  </div>
 </div>
 
 <div class="modal fade" id="candidate-modal" role="dialog" aria-labelledby="" aria-hidden="true">

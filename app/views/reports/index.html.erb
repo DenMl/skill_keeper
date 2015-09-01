@@ -1,20 +1,23 @@
 <% provide(:title, t('reports')) %>
 <div class="container">
-  <h3>
+  <h2 class="text-center">
     <%= yield(:title) %>
-  </h3>
-  <%= will_paginate @report_templates %>
+  </h2>
+
+  <div class="col-md-12 text-center">
+    <%= will_paginate @report_templates %>
+  </div>
   <table class="table table-hover" id="report_templates">
     <thead>
     <tr>
-      <th><%= t('report_template.name_field') %></th>
-      <th><%= t('report_template.description_field') %></th>
+      <th width="20%"><%= t('report_template.name_field') %></th>
+      <th width="79%"><%= t('report_template.description_field') %></th>
       <th>&nbsp;</th>
     </tr>
     </thead>
     <tbody class="report-template-index">
     <% @report_templates.each do |report_template| %>
-    <tr>
+        <tr>
           <td><%= report_template.name %></td>
           <td><%= report_template.description %></td>
           <td>
