@@ -47,7 +47,7 @@ gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
 
-gem 'select2-rails'
+gem 'select2-rails', '3.5.9.3'
 
 group :development, :test do
   gem 'rspec-rails', '2.13.1'
@@ -57,4 +57,9 @@ group :test do
   gem 'selenium-webdriver', '2.35.1'
   gem 'capybara', '2.1.0'
   gem 'factory_girl_rails', '4.2.1'
+end
+
+group :production do
+  gem 'pg', '0.15.1'
+  gem 'rails_12factor', '0.0.2'
 end
