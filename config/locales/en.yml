@@ -190,6 +190,8 @@ en:
     account: Account
     settings: Settings
     locale: Language
+    locale_ru: Russian
+    locale_en: English
     items_per_page: Items per page
     saved: Saved
 

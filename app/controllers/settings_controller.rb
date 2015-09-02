@@ -15,6 +15,9 @@ class SettingsController < ApplicationController
     cookies.permanent[:current_locale] = l
 
     i = params[:items_per_page].to_s.strip.to_i
+    if i<3
+      i = 15
+    end
     cookies.permanent[:items_per_page] = i
 
     flash[:success] = t('settings_page.saved')

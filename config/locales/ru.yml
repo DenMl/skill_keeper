@@ -171,5 +171,7 @@ ru:
     account: Аккаунт
     settings: Прочее
     locale: Язык
+    locale_ru: Русский
+    locale_en: Английский
     items_per_page: Записей на странице
     saved: Сохранено
