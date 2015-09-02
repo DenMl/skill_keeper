@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 ready = ->
-	$('.alert').hide('fade', 2000)
+	$('.alert').animate({opacity: 0}, 2000);
 	$('[data-toggle="tooltip"]').tooltip()
 	$(".modal").tooltip({ selector: '[data-toggle=tooltip]' })
 
