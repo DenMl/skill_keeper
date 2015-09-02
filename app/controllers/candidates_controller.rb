@@ -59,6 +59,6 @@ class CandidatesController < ApplicationController
   end
 
   def fetch
-    @candidates = Candidate.paginate(page: params[:page], per_page: 15)
+    @candidates = Candidate.paginate(page: params[:page], per_page: items_per_page)
   end
 end

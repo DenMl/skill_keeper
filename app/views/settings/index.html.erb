@@ -1,0 +1,80 @@
+<% provide(:title, t('settings_page.title')) %>
+
+<div class="container">
+  <h2 class="text-center">
+    <%= yield(:title) %>
+  </h2>
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" id="tab-container">
+    <li class="active"><a href="#home" data-toggle="tab"><%= t('settings_page.profile') %></a></li>
+    <li><a href="#account" data-toggle="tab"><%= t('settings_page.account') %></a></li>
+    <li><a href="#settings" data-toggle="tab"><%= t('settings_page.settings') %></a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div class="tab-pane active" id="home">
+      <div class="col-md-12">
+        <aside class="span4">
+          <section>
+            <h1>
+              <%= gravatar_for @user %>
+              <%= @user.name %>
+            </h1>
+          </section>
+        </aside>
+      </div>
+    </div>
+    <div class="tab-pane" id="account">
+
+      <%= form_for(@user, url: update_user_path) do |f| %>
+          <div class="row">
+            <div class="col-md-4  text-center">
+              <%= gravatar_for @user %>
+              <a href="http://gravatar.com/emails"><%= t('profile_page.change_gravatar_link') %></a>
+            </div>
+            <div class="col-md-4">
+              <%= render 'users/fields', f: f %>
+            </div>
+          </div>
+          <div class="col-md-4">
+          </div>
+          <div class="col-md-12 text-center">
+            <%= f.submit t('profile_page.save_changes_button'), class: "btn btn-primary btn-width-sm" %>
+          </div>
+      <% end %>
+    </div>
+    <div class="tab-pane" id="settings">
+      <%= form_tag(update_settings_path) do %>
+          <div class="row">
+            <div class="col-md-4  text-center">
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <%= label_tag :locale, t('settings_page.locale'), class: 'control-label' %>
+                <%= select_tag :locale, options_for_select([[t('settings_page.locale_ru'),:ru],[t('settings_page.locale_en'),:en]],@locale) , class: 'form-control' %>
+              </div>
+              <div class="form-group">
+                <%= label_tag :items_per_page, t('settings_page.items_per_page'), class: 'control-label' %>
+                <%= text_field_tag :items_per_page, @items_per_page, class: 'form-control' %>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+          </div>
+          <div class="col-md-12 text-center">
+            <%= submit_tag t('profile_page.save_changes_button'), class: "btn btn-primary btn-width-sm" %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
+<script>
+    <% if @tab %>
+    $('#tab-container a[href="#<%= @tab%>"]').tab('show')
+    <% end %>
+</script>
+

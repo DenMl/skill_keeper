@@ -184,4 +184,15 @@ en:
     description_field: Description
     candidates: Candidates
     back_button: Back
+  settings_page:
+    title: Account Settings
+    profile: Profile
+    account: Account
+    settings: Settings
+    locale: Language
+    locale_ru: Russian
+    locale_en: English
+    items_per_page: Items per page
+    saved: Saved
+
 

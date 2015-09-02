@@ -9,6 +9,11 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 
+  resources :settings, only: [:index]
+  match '/update_settings', to: 'settings#update_settings', via: 'post', as: :update_settings
+  match '/update_user', to: 'settings#update_user', via: 'patch', as: :update_user
+  match '/settings_tab/:tab', to: 'settings#index', via: 'get', as: :settings_tab
+
   #resources :skills, only: [:index, :new, :create, :edit, :update, :destroy]
   #resources :candidates, only: [:index, :new, :create, :edit, :update, :destroy]
   resources :report_templates do

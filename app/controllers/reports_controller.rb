@@ -3,7 +3,7 @@ class ReportsController < ApplicationController
   respond_to :html, :js
 
   def index
-    @report_templates = ReportTemplate.paginate(page: params[:page], per_page: 15)
+    @report_templates = ReportTemplate.paginate(page: params[:page], per_page: items_per_page)
   end
 
   def show
