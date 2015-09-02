@@ -58,6 +58,6 @@ class ReportTemplatesController < ApplicationController
   end
 
   def fetch
-    @report_templates = ReportTemplate.paginate(page: params[:page], per_page: 15)
+    @report_templates = ReportTemplate.paginate(page: params[:page], per_page: items_per_page)
   end
 end
