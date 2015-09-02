@@ -60,6 +60,6 @@ class SkillGroupsController < ApplicationController
   end
 
   def fetch
-    @skill_groups = SkillGroup.paginate(page: params[:page], per_page: 15)
+    @skill_groups = SkillGroup.paginate(page: params[:page], per_page: items_per_page)
   end
 end

@@ -47,4 +47,8 @@ module SessionsHelper
     end
   end
 
+  def items_per_page
+    cookies.permanent[:items_per_page] || 15
+  end
+
 end
