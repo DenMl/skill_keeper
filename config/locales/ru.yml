@@ -165,3 +165,11 @@ ru:
     description_field: Описание
     candidates: Кандидаты
     back_button: Назад
+  settings_page:
+    title: Настройки Аккаунта
+    profile: Профайл
+    account: Аккаунт
+    settings: Прочее
+    locale: Язык
+    items_per_page: Записей на странице
+    saved: Сохранено
