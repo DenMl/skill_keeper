@@ -32,7 +32,7 @@ en:
   users: Users
   about: About
   contact: Contacts
-  account: Account
+  account: Settings
   skills: Skills
   skill_groups: Skill Groups
   reports: Reports
@@ -53,7 +53,6 @@ en:
     home: Home
     help: Help
     profile: Profile 
-    settings: Settings
   profile_page:
     title: Edit profile
     save_changes_button: Save changes
@@ -184,4 +183,15 @@ en:
     description_field: Description
     candidates: Candidates
     back_button: Back
+  settings_page:
+    title: Account Settings
+    profile: Profile
+    account: Account
+    settings: Settings
+    locale: Language
+    locale_ru: Russian
+    locale_en: English
+    items_per_page: Items per page
+    saved: Saved
+
 

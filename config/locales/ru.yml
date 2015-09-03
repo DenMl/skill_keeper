@@ -14,7 +14,7 @@ ru:
   users: Пользователи
   about: О нас
   contact: Контакты
-  account: Аккаунт
+  account: Настройки
   skills: Скилы
   skill_groups: Группы скилов
   reports: Отчеты
@@ -35,7 +35,6 @@ ru:
     home: На главную
     help: Помощь
     profile: Профиль 
-    settings: Настройки
   profile_page:
     title: Редактирование профиля
     save_changes_button: Сохранить изменения
@@ -165,3 +164,13 @@ ru:
     description_field: Описание
     candidates: Кандидаты
     back_button: Назад
+  settings_page:
+    title: Настройки Аккаунта
+    profile: Профайл
+    account: Аккаунт
+    settings: Прочее
+    locale: Язык
+    locale_ru: Русский
+    locale_en: Английский
+    items_per_page: Записей на странице
+    saved: Сохранено

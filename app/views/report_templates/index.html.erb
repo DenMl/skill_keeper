@@ -1,22 +1,30 @@
 <% provide(:title, t('report_template.page')) %>
 <div class="container">
-  <h3>
+  <h2 class="text-center">
     <%= t('report_template.title.all') %>
-  </h3>
-  <%= will_paginate @report_templates %>
+  </h2>
+
+  <div class="col-md-12 text-center">
+    <%= will_paginate @report_templates %>
+  </div>
+
   <table class="table table-hover" id="report_templates">
     <thead>
     <tr>
-      <th><%= t('report_template.field.name')%></th>
-      <th><%= t('report_template.field.description')%></th>
+      <th><%= t('report_template.field.name') %></th>
+      <th><%= t('report_template.field.description') %></th>
       <th>&nbsp;</th>
     </tr>
     </thead>
     <tbody class="report_template-index">
-      <%= render "report_templates/index" %>
+    <%= render "report_templates/index" %>
     </tbody>
   </table>
-  <%= link_to t('report_template.button.create'), new_report_template_path, remote: true, class: "btn btn-primary" %>
+  <div class="col-md-12 text-center">
+    <%= link_to t('report_template.button.create'), new_report_template_path, remote: true, class: "btn btn-primary btn-width-sm" %>
+  </div>
+
+
 </div>
 
 <div class="modal fade" id="report_template-modal" role="dialog" aria-labelledby="" aria-hidden="true">

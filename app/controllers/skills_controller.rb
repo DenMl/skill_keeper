@@ -50,7 +50,7 @@ class SkillsController < ApplicationController
   end
 
   def fetch
-    @skills = Skill.paginate(page: params[:page], per_page: 15)
+    @skills = Skill.paginate(page: params[:page], per_page: items_per_page)
   end
 
 end

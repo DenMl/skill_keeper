@@ -3,8 +3,6 @@ ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '1.3.10'
 # Use SCSS for stylesheets
 gem 'sass-rails', '4.0.5'
 # Use Uglifier as compressor for JavaScript assets
@@ -47,9 +45,11 @@ gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
 
-gem 'select2-rails'
+gem 'select2-rails', '3.5.9.3'
 
 group :development, :test do
+# Use sqlite3 as the database for Active Record
+  gem 'sqlite3', '1.3.10'
   gem 'rspec-rails', '2.13.1'
 end
 
@@ -57,4 +57,9 @@ group :test do
   gem 'selenium-webdriver', '2.47.1'
   gem 'capybara', '2.5.0'
   gem 'factory_girl_rails', '4.2.1'
+end
+
+group :production do
+  gem 'pg', '0.15.1'
+  gem 'rails_12factor', '0.0.2'
 end

@@ -104,6 +104,12 @@ tr:hover #tooltip-sign{
     }
 }
 
+.container {
+    h2.text-center {
+      margin-top: 0px;
+    }
+}
+
 /* select2 */
 .modal-dialog .select2-container {
   width: 100%;
@@ -146,3 +152,17 @@ tr:hover #tooltip-sign{
   cursor: move;
 }
 
+
+/*flash message*/
+.flash-message {
+  height: 26px;
+  .alert {
+    padding: 2px;
+    margin-bottom: 0px;
+  }
+}
+
+/* tab panel*/
+.tab-pane{
+  margin-top: 40px;
+}
