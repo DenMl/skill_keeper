@@ -1,26 +1,46 @@
 require 'spec_helper'
+require 'capybara'
 
-describe "skill_groups" do
+describe 'Skill Group page' do
 
-	subject { page }
-	
-	describe "skill_groups#index" do
-		let(:user) { FactoryGirl.create(:user) }
-		before(:each) do
-			sign_in user
-			visit skill_groups_path
-		end
+  let!(:user) {FactoryGirl.create(:user)}
+  let!(:skill_group) {FactoryGirl.create(:skill_group)}
 
-		  it { should have_title('Skills Groups') }
-    	it { should have_content('All skill groups') }
-    	it { should have_link('Create')}
+  before(:each) do
+    #FactoryGirl.create(:skill_group)
+    sign_in user
+    visit skill_groups_path
+  end
 
-    	describe "display all skill groups" do
-    		before(:all) { FactoryGirl.create(:skill_group) }
-      		after(:all)  { SkillGroup.delete_all }
+  it 'have appropriate page structure ' do
+    page.should have_title('Skills Groups')
+    page.should have_content('All skill groups')
+    page.should have_link('Create')
+  end
 
-      		it { should have_selector('table tbody tr:nth-of-type(1) td:nth-of-type(1)', text: 'Skill group 1')}
-      		it { should have_selector('table tbody tr:nth-of-type(1) td:nth-of-type(2)', text: 'Skill group 1 short description.')}
-      end
-	end
+  it 'create skill group item', js: true do
+      click_on 'Create'
+      fill_in 'skill_group_name', with: 'Fake Skill Group'
+      fill_in 'skill_group_description', with: 'Fake Skill Group description'
+      click_on 'Accept'
+      page.should have_content 'Fake Skill Group'
+      page.should have_content 'Fake Skill Group description'
+  end
+
+  it 'delete skill group item', js: true do
+    find(:css, 'table tbody tr:nth-of-type(1)').find_link('Delete').click
+    click_on 'Accept'
+    page.should_not have_content 'Skill Group 2'
+    page.should_not have_content 'Skill Group 2 short description'
+  end
+
+  it 'edit skill group item', js: true do
+    find(:css, 'table tbody tr:nth-of-type(1)').find_link('Edit').click
+    fill_in 'skill_group_name', with: 'Edited Skill Group'
+    fill_in 'skill_group_description', with: 'Edited Skill Group description'
+    click_on 'Accept'
+    page.should have_content 'Edited Skill Group'
+    page.should have_content 'Edited Skill Group description'
+  end
+
 end
