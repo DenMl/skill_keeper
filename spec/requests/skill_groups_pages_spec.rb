@@ -11,7 +11,7 @@ describe "skill_groups" do
 			visit skill_groups_path
 		end
 
-		it { should have_title('Skills Groups') }
+		  it { should have_title('Skills Groups') }
     	it { should have_content('All skill groups') }
     	it { should have_link('Create')}
 
@@ -21,13 +21,6 @@ describe "skill_groups" do
 
       		it { should have_selector('table tbody tr:nth-of-type(1) td:nth-of-type(1)', text: 'Skill group 1')}
       		it { should have_selector('table tbody tr:nth-of-type(1) td:nth-of-type(2)', text: 'Skill group 1 short description.')}
-      end
-
-    	describe "create new skill group", js: true do
-        click_on('Create')
-        dialog = page.driver.browser.switch_to.alert
-        dialog.text.should == 'New skill group'
-        dialog.dismiss
       end
 	end
 end
