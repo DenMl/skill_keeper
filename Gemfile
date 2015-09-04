@@ -58,6 +58,7 @@ group :test do
   gem 'capybara', '2.5.0'
   gem 'factory_girl_rails', '4.5.0'
   gem 'database_cleaner', '1.4.1'
+  gem 'capybara-select2', '1.0.1'
 end
 
 group :production do

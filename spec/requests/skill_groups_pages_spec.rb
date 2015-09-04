@@ -37,7 +37,7 @@ describe 'skill_group' do
     before do
       find(:css, 'table tbody tr:nth-of-type(1)').find_link('Delete').click
       click_on 'Accept'
-      sleep 1
+      wait_for_ajax
     end
     it do
       within('.table') do
@@ -57,6 +57,37 @@ describe 'skill_group' do
     it do
       should have_content 'Edited Skill Group'
       should have_content 'Edited Skill Group description'
+    end
+  end
+
+  describe '.create (invalid name)', js: true do
+    before do
+      FactoryGirl.create(:skill_group, name: 'Skill Group')
+      click_on 'Create'
+      fill_in 'skill_group_name', with: 'Skill Group'
+      click_on 'Accept'
+    end
+    it do
+      should have_selector '.list-group-item-danger'
+    end
+  end
+
+  describe '.add_skill', js: true do
+    before do
+      10.times {FactoryGirl.create(:skill)}
+      find(:css, 'table tbody tr:nth-of-type(1)').find_link('Edit').click
+      fill_in 's2id_autogen1', with: 'Skill 1'
+      select2('Skill 1', css: '#s2id_skillsSelector')
+      wait_for_ajax
+      fill_in 's2id_autogen1', with: 'Skill 2'
+      select2('Skill 2', css: '#s2id_skillsSelector')
+      wait_for_ajax
+      click_on 'Accept'
+      find(:css, 'table tbody tr:nth-of-type(1)').find_link('Edit').click
+      wait_for_ajax
+    end
+    it do
+      should have_selector 'ul.select2-choices li.select2-search-choice'
     end
   end
 end
